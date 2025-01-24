@@ -14,7 +14,7 @@ const clubsName = [
 const clubs = clubsName.map((club, index) => {
   return {
     name: club,
-    image: `${club.toLowerCase()}` + ".png",
+    image: "club_carousel/" + `${club.toLowerCase()}` + ".png",
   };
 });
 
