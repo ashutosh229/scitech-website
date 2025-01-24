@@ -17,6 +17,12 @@
 - [] Call to action
 - [] Visuals
 
+## Data 
+- [] Images of the clubs carousel 
+- [] Background images for the home page 
+- [] Images in the home page for other sections 
+- []
+
 
 
 
