@@ -3,6 +3,19 @@
 ## General TODO
 - [X] Implement the general image path
 - [] Ojus bhaiya se images chahiye 
+- [] images ka carousel chahiye
+- [] niche achievements ka background badalna hain 
+
+## About Us
+- [] Mission Statement 
+- [] History and Background 
+- [] Core Values 
+- [] Team and Leadership
+- [] Activities and Events
+- [] Achievements and Impact
+- [] Future Vision 
+- [] Call to action
+- [] Visuals
 
 
 
