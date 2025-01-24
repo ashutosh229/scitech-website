@@ -16,6 +16,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import routes from "@/data/links";
 
 const clubs = [
   {
@@ -41,85 +43,87 @@ const clubs = [
 ];
 
 export default function Home() {
-  const particlesInit = async (main: any) => {
-    await loadFull(main);
-  };
-  const particleOptions = {
-    background: {
-      color: {
-        value: "#000000", // Background color
-      },
-    },
-    fpsLimit: 120, // Limits FPS
-    particles: {
-      number: {
-        value: 50,
-        density: {
-          enable: true,
-          area: 800, // Particle density
-        },
-      },
-      color: {
-        value: ["#ffffff", "#00ccff", "#ff66cc"],
-      },
-      shape: {
-        type: "circle",
-      },
-      opacity: {
-        value: 0.8,
-        random: true,
-        animation: {
-          enable: true,
-          speed: 1,
-          minimumValue: 0.3,
-          sync: false,
-        },
-      },
-      size: {
-        value: 4,
-        random: true,
-        animation: {
-          enable: true,
-          speed: 10,
-          minimumValue: 0.1,
-          sync: false,
-        },
-      },
-      move: {
-        enable: true,
-        speed: 2,
-        direction: undefined, // Random movement
-        random: false,
-        straight: false,
-        outModes: {
-          default: "out",
-        },
-      },
-    },
-    interactivity: {
-      events: {
-        onHover: {
-          enable: true,
-          mode: "repulse",
-        },
-        onClick: {
-          enable: true,
-          mode: "push",
-        },
-        resize: true,
-      },
-      modes: {
-        repulse: {
-          distance: 100,
-          duration: 0.4,
-        },
-        push: {
-          quantity: 4,
-        },
-      },
-    },
-    detectRetina: true,
-  };
+  const router = useRouter();
+
+  // const particlesInit = async (main: any) => {
+  //   await loadFull(main);
+  // };
+  // const particleOptions = {
+  //   background: {
+  //     color: {
+  //       value: "#000000", // Background color
+  //     },
+  //   },
+  //   fpsLimit: 120, // Limits FPS
+  //   particles: {
+  //     number: {
+  //       value: 50,
+  //       density: {
+  //         enable: true,
+  //         area: 800, // Particle density
+  //       },
+  //     },
+  //     color: {
+  //       value: ["#ffffff", "#00ccff", "#ff66cc"],
+  //     },
+  //     shape: {
+  //       type: "circle",
+  //     },
+  //     opacity: {
+  //       value: 0.8,
+  //       random: true,
+  //       animation: {
+  //         enable: true,
+  //         speed: 1,
+  //         minimumValue: 0.3,
+  //         sync: false,
+  //       },
+  //     },
+  //     size: {
+  //       value: 4,
+  //       random: true,
+  //       animation: {
+  //         enable: true,
+  //         speed: 10,
+  //         minimumValue: 0.1,
+  //         sync: false,
+  //       },
+  //     },
+  //     move: {
+  //       enable: true,
+  //       speed: 2,
+  //       direction: undefined, // Random movement
+  //       random: false,
+  //       straight: false,
+  //       outModes: {
+  //         default: "out",
+  //       },
+  //     },
+  //   },
+  //   interactivity: {
+  //     events: {
+  //       onHover: {
+  //         enable: true,
+  //         mode: "repulse",
+  //       },
+  //       onClick: {
+  //         enable: true,
+  //         mode: "push",
+  //       },
+  //       resize: true,
+  //     },
+  //     modes: {
+  //       repulse: {
+  //         distance: 100,
+  //         duration: 0.4,
+  //       },
+  //       push: {
+  //         quantity: 4,
+  //       },
+  //     },
+  //   },
+  //   detectRetina: true,
+  // };
   // const particleMotion = () => {
   //   return (
   //     <Particles
@@ -167,6 +171,9 @@ export default function Home() {
             <Button
               size="lg"
               className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/30 shadow-xl"
+              onClick={() => {
+                router.push(routes.about);
+              }}
             >
               Explore Our Vision
             </Button>

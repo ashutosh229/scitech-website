@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import routes from "@/data/links";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -27,7 +28,7 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo and Heading Section */}
-        <Link href="/" className="flex items-center space-x-4">
+        <Link href={routes.home} className="flex items-center space-x-4">
           <motion.div
             className="flex items-center space-x-3"
             whileHover={{ scale: 1.05 }}
@@ -100,7 +101,7 @@ const Header = () => {
         </nav>
       </div>
     </motion.header>
-  );    
+  );
 };
 
 export default Header;
