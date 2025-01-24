@@ -18,29 +18,7 @@ import { Navigation, Pagination, A11y } from "swiper/modules";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import routes from "@/data/links";
-
-const clubs = [
-  {
-    name: "Robotics Club",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
-  },
-  {
-    name: "Coding Club",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-  },
-  {
-    name: "Electronics Club",
-    image: "https://images.unsplash.com/photo-1498049794561-7780e7231661",
-  },
-  {
-    name: "Science Club",
-    image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31",
-  },
-  {
-    name: "Astronomy Club",
-    image: "https://images.unsplash.com/photo-1543722530-d2c3201371e7",
-  },
-];
+import clubs from "@/data/clubs";
 
 export default function Home() {
   const router = useRouter();
