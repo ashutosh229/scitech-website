@@ -17,7 +17,7 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import routes from "@/data/links";
+import routes, { clubsRoutes } from "@/data/links";
 import clubs from "@/data/clubs";
 
 export default function Home() {
@@ -191,6 +191,9 @@ export default function Home() {
                     layout="fill"
                     objectFit="cover"
                     className="absolute inset-0 w-full h-full opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+                    onClick={() => {
+                      router.push("/about-us");
+                    }}
                   />
                   <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500"></div>
                   <h3 className="relative text-xl font-bold text-white text-center p-6">

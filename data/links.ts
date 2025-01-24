@@ -11,4 +11,18 @@ const routes: Routes = {
   contact: "/contact",
 };
 
+const clubsRoutes = {
+  DSAI: "",
+  Electromos: "",
+  Spectre: "",
+  GDG: "",
+  SES: "",
+  BIB: "",
+  OpenLake: "",
+  Motorsports: "",
+  Epsilon: "",
+  Ingenuity: "",
+};
+
 export default routes;
+export { clubsRoutes };
