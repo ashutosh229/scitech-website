@@ -7,7 +7,7 @@
 - [] niche achievements ka background badalna hain 
 
 ## About Us
-- [] Mission Statement 
+- [x] Mission Statement 
 - [] History and Background 
 - [] Core Values 
 - [] Team and Leadership

@@ -8,8 +8,12 @@ import Footer from "@/components/defined-ui/footer";
 import { url } from "node:inspector";
 import imagesPath from "@/data/images";
 import { AboutCard } from "@/components/defined-ui/aboutCard";
+import { MissionCard } from "@/components/defined-ui/missionCard";
+import { MissionCardV2 } from "@/components/defined-ui/missionCardv2";
+import { useRouter } from "next/navigation";
 
 const AboutUs = () => {
+  const router = useRouter();
   return (
     <div className="min-h-screen bg-[#101323] text-white">
       <Header />
@@ -18,7 +22,7 @@ const AboutUs = () => {
         <motion.div
           className="relative min-h-[50vh] flex items-center justify-center text-center bg-cover bg-center mb-12"
           style={{
-            backgroundImage: `url('${imagesPath.aboutUsBg}')`,
+            backgroundImage: `url('${imagesPath.aboutUs.heroBg}')`,
             marginTop: "64px",
           }}
           initial={{ opacity: 0 }}
@@ -35,25 +39,38 @@ const AboutUs = () => {
           </motion.h1>
         </motion.div>
 
-        {/* Mission Statement */}
+        {/* Mission Statements */}
         <AboutCard></AboutCard>
-        {/* History Section */}
+        <MissionCard></MissionCard>
+        <MissionCardV2></MissionCardV2>
+        <MissionCard></MissionCard>
+
+        {/*History*/}
         <motion.div
-          className="mb-12"
+          className="mt-24 mb-12 text-center "
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 12 }}
         >
-          <h2 className="text-3xl font-bold mb-4">Our History</h2>
-          <p className="text-lg leading-relaxed">
+          <h2 className="text-3xl font-bold mb-6">Our History</h2>
+          <p className="text-lg leading-relaxed mb-6">
             Established in [Year], the SciTech Council has grown from a small
             group of enthusiasts to a vibrant community dedicated to advancing
             science and technology within our college. Over the years, we’ve
             organized numerous hackathons, workshops, and lectures that have
             left a lasting impact.
           </p>
+          <button
+            onClick={() => {
+              router.push("/history");
+            }}
+            className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition-all"
+          >
+            Know the History
+          </button>
         </motion.div>
+
         {/* Team Section */}
         <motion.div
           className="mb-12"

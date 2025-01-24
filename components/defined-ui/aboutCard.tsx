@@ -15,7 +15,7 @@ export const AboutCard = () => {
       {/* Image */}
       <div className="flex-1">
         <img
-          src={imagesPath.aboutMissionCards.mission}
+          src={imagesPath.aboutUs.story}
           className="h-48 sm:h-full w-full object-cover sm:object-fill"
           alt="Our Story"
         />

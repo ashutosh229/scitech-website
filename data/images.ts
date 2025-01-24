@@ -1,7 +1,8 @@
 const imagesPath = {
-  aboutUsBg: "/about.jpg",
-  aboutMissionCards: {
-    mission: "/timeline.png",
+  aboutUs: {
+    heroBg: "/about.jpg",
+    story: "/timeline.png",
+    mission: "/mission.png",
   },
 };
 
