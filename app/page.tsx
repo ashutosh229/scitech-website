@@ -15,6 +15,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, A11y } from "swiper/modules";
+import Link from "next/link";
 
 const clubs = [
   {
@@ -267,10 +268,12 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
-                  View All Achievements
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2" />
-                </Button>
+                <Link href={"/achievements"} passHref>
+                  <Button className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+                    View All Achievements
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2" />
+                  </Button>
+                </Link>
               </motion.div>
             </motion.div>
           </div>
