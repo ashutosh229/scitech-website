@@ -1,4 +1,5 @@
 import { Routes } from "@/types/routes";
+import { clubsName } from "./clubs";
 
 const routes: Routes = {
   home: "/",
@@ -11,18 +12,12 @@ const routes: Routes = {
   contact: "/contact",
 };
 
-const clubsRoutes = {
-  DSAI: "",
-  Electromos: "",
-  Spectre: "",
-  GDG: "",
-  SES: "",
-  BIB: "",
-  OpenLake: "",
-  Motorsports: "",
-  Epsilon: "",
-  Ingenuity: "",
-};
+const clubsRoutes = clubsName.map((club, index) => {
+  const clubName = club.toLowerCase().replace(" ", "-");
+  return {
+    [club]: `/clubs/${clubName}`,
+  };
+});
 
 export default routes;
 export { clubsRoutes };

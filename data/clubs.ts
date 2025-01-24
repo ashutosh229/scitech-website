@@ -19,3 +19,4 @@ const clubs = clubsName.map((club, index) => {
 });
 
 export default clubs;
+export { clubsName };
