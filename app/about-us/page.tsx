@@ -5,12 +5,14 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Header from "@/components/defined-ui/header";
 import Footer from "@/components/defined-ui/footer";
-import { url } from "node:inspector";
 import imagesPath from "@/data/images";
 import { AboutCard } from "@/components/defined-ui/aboutCard";
 import { MissionCard } from "@/components/defined-ui/missionCard";
 import { MissionCardV2 } from "@/components/defined-ui/missionCardv2";
 import { useRouter } from "next/navigation";
+import { members } from "@/data/members";
+import { MemberCard } from "@/components/defined-ui/memberCard";
+import { TeamCarousel } from "@/components/defined-ui/teamCarousel";
 
 const AboutUs = () => {
   const router = useRouter();
@@ -72,38 +74,45 @@ const AboutUs = () => {
         </motion.div>
 
         {/* Team Section */}
+        {/* <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 12 }}
+        >
+          <h2 className="mt-50 text-3xl font-bold mb-4 text-center">
+            Meet Our Team
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {members.map((member) => (
+              <motion.div
+                key={member.name}
+                className="relative w-[22rem] h-[26rem] bg-gray-700 p-4 rounded-lg shadow-lg flex items-center justify-center"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4 }}
+              >
+                <MemberCard member={member} />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div> */}
+
         <motion.div
           className="mb-12"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 12 }}
         >
-          <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((member) => (
-              <motion.div
-                key={member}
-                className="bg-gray-800 rounded-lg p-6 shadow-lg hover:scale-105 transition-transform"
-                whileHover={{ scale: 1.1 }}
-              >
-                <Image
-                  src={`/team/member-${member}.jpg`}
-                  alt={`Team Member ${member}`}
-                  width={150}
-                  height={150}
-                  className="rounded-full mx-auto mb-4"
-                />
-                <h3 className="text-xl font-bold text-center">
-                  Member {member}
-                </h3>
-                <p className="text-center">Role {member}</p>
-              </motion.div>
-            ))}
-          </div>
+          <h2 className="mt-50 text-3xl font-bold mb-8 text-center">
+            Meet Our Team
+          </h2>
+          <TeamCarousel members={members} />
         </motion.div>
+
         {/* Activities Section */}
-        <motion.div
+        {/* <motion.div
           className="mb-12"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -117,7 +126,8 @@ const AboutUs = () => {
             <li>Collaborate with industry leaders and alumni</li>
             <li>Foster innovation through project-based learning</li>
           </ul>
-        </motion.div>
+        </motion.div> */}
+
         {/* Call to Action */}
         <motion.div
           className="text-center mt-12"
@@ -130,7 +140,12 @@ const AboutUs = () => {
             Become a part of the SciTech Council and explore your potential in
             science and technology.
           </p>
-          <button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-all">
+          <button
+            onClick={() => {
+              router.push("/join");
+            }}
+            className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-all"
+          >
             Become a Member
           </button>
         </motion.div>
