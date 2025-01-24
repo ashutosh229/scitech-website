@@ -16,6 +16,14 @@
 - [x] Visuals and animations
 - [] card flip animation banana hain
 
+## Gallery
+- [x] initial setup 
+- [x] render images
+- [x] visuals 
+- [x] pagination
+- [x] extras
+- [] image tap carousel feature
+
 ## Other Pages
 - [] history ka page banana hain
 - [] join ka page banana hain
