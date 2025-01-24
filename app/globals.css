@@ -127,3 +127,7 @@
   text-fill-color: transparent;
   text-shadow: 0 0 30px rgba(255, 51, 102, 0.3);
 }
+
+html {
+  scroll-behavior: smooth;
+}
