@@ -7,4 +7,6 @@ export type Routes = {
   clubs: string;
   team: string;
   contact: string;
+  history: string;
+  join: string;
 };

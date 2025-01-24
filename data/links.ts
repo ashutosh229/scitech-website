@@ -10,6 +10,8 @@ const routes: Routes = {
   clubs: "/#clubs",
   team: "/team",
   contact: "/contact",
+  history: "/history",
+  join: "/join",
 };
 
 const clubsRoutes = clubsName.map((club, index) => {

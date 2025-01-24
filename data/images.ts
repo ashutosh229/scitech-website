@@ -7,4 +7,3 @@ const imagesPath = {
 };
 
 export default imagesPath;
-
