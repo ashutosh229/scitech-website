@@ -1,12 +1,10 @@
 # Project Checklist
 
 ## Home Page
-- [X] Implement the general image path
-- [] Ojus bhaiya se images chahiye 
-- [] images ka carousel chahiye
-- [] niche achievements ka background badalna hain 
+- [X] Implement the general image path 
+- [] images ka carousel banana hain in the home page
+- [] niche achievements ka background badalna hain
 - [] sara kuch data mein convert karna hain
-- [] implementation of the email bar in footer
 
 ## About Us
 - [x] Mission Statement 
