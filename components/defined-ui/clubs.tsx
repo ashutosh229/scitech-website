@@ -2,78 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-
-interface Image {
-  src: string;
-  alt: string;
-  name: string;
-  href: string;
-}
+import { images } from "@/data/clubs";
+import imagesPath from "@/data/images";
 
 const CircularImages: React.FC = () => {
-  const images: Image[] = [
-    {
-      src: "club_logo/GDSC.png",
-      alt: "GDSC Club",
-      name: "GDSC",
-      href: "/club/gdsc",
-    },
-    {
-      src: "club_logo/SES Logo.png",
-      alt: "SES Logo",
-      name: "SES",
-      href: "/club/ses",
-    },
-    {
-      src: "club_logo/BIB.png",
-      alt: "BIB Logo",
-      name: "BlockChain",
-      href: "/club/blockchain",
-    },
-    {
-      src: "club_logo/OPENLAKE.png",
-      alt: "OPENLAKE Club",
-      name: "Openlake",
-      href: "/club/openlake",
-    },
-    {
-      src: "club_logo/Motorsports.png",
-      alt: "Motorsports Club",
-      name: "Motorsports",
-      href: "/club/motorsports",
-    },
-    {
-      src: "club_logo/epsilon_logo_new.png",
-      alt: "Epsilon Logo",
-      name: "Epsilon",
-      href: "/club/epsilon",
-    },
-    {
-      src: "club_logo/ING.png",
-      alt: "ING Logo",
-      name: "Ingenuity",
-      href: "/club/ingenuity",
-    },
-    {
-      src: "club_logo/DSAI.png",
-      alt: "DSAI Logo",
-      name: "DSAI",
-      href: "/club/dsai",
-    },
-    {
-      src: "club_logo/Electromos.png",
-      alt: "Electromos Logo",
-      name: "Electromos",
-      href: "/club/electromos",
-    },
-    {
-      src: "club_logo/DSAI.png",
-      alt: "Spectra Logo",
-      name: "Spectra",
-      href: "/club/spectra",
-    },
-  ];
-
   const centerX = 50; // Center X coordinate (percentage)
   const centerY = 50; // Center Y coordinate (percentage)
 
@@ -98,7 +30,7 @@ const CircularImages: React.FC = () => {
     <div className="h-full w-full mx-auto">
       <div className="relative h-full w-[100vh] max-w-full mx-auto">
         <img
-          src="scitechgif.gif"
+          src={imagesPath.home.logoCircleGif}
           alt="Center"
           className="absolute w-28 h-28 sm:w-32 sm:h-32 lg:w-44 lg:h-44 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         />

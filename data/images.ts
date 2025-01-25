@@ -6,6 +6,8 @@ const imagesPath = {
   },
   home: {
     scitechLogo: "scitech-new-logo.jpeg",
+    heroBg: "",
+    logoCircleGif: "scitechgif.gif",
   },
 };
 
