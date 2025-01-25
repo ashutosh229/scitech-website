@@ -7,16 +7,11 @@ import {
   Twitter,
   Instagram,
   Linkedin,
+  Phone,
   Mail,
-  Send,
-  Github,
 } from "lucide-react";
-import { Button } from "../ui/button";
-import { useState } from "react";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-
   const quickLinks = [
     "About Us",
     "Gallery",
@@ -32,7 +27,6 @@ const Footer = () => {
     { icon: Twitter, href: "#", color: "text-sky-400" },
     { icon: Instagram, href: "#", color: "text-pink-500" },
     { icon: Linkedin, href: "#", color: "text-blue-700" },
-    { icon: Github, href: "#", color: "text-gray-400" },
   ];
 
   return (
@@ -51,7 +45,7 @@ const Footer = () => {
             <div className="space-y-3 text-gray-300">
               <p>IIT Bhilai</p>
               <p>Permanent Campus, Kutelabhata</p>
-              <p>Durg, Chattisgarh - 490020</p>
+              <p>Durg, Chhattisgarh - 490020</p>
             </div>
           </motion.div>
 
@@ -80,39 +74,35 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Contact & Social */}
+          {/* Contact Section */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              Stay Connected
+              Contact Us
             </h3>
 
-            {/* Newsletter Signup */}
-            <div className="flex mb-6 border border-white/20 rounded-full overflow-hidden">
-              <div className="p-3 bg-white/10">
-                <Mail className="text-gray-400" />
-              </div>
-              <input
-                type="email"
-                placeholder="Your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-transparent px-3 text-white placeholder-gray-500 focus:outline-none"
-              />
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-3 bg-white/10 hover:bg-white/20 transition-colors"
+            <div className="space-y-4 text-gray-300">
+              <a
+                href="mailto:Gensec_Scitech_Gymkhana@iitbhilai.ac.in"
+                className="flex items-center space-x-3 hover:text-white transition-all"
               >
-                <Send className="text-gray-400" />
-              </motion.button>
+                <Mail className="text-white" />
+                <span>Email: Gensec_Scitech_Gymkhana@iitbhilai.ac.in</span>
+              </a>
+              <a
+                href="tel:+918708943859"
+                className="flex items-center space-x-3 hover:text-white transition-all"
+              >
+                <Phone className="text-white" />
+                <span>Phone: +91 8708943859</span>
+              </a>
             </div>
 
             {/* Social Icons */}
-            <div className="flex space-x-5 justify-center mb-6">
+            <div className="flex space-x-5 justify-start mt-6">
               {socialLinks.map(({ icon: Icon, href, color }, index) => (
                 <motion.a
                   key={index}
