@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 import Header from "@/components/defined-ui/header";
 import Footer from "@/components/defined-ui/footer";
 import { Timeline, TimelineItem } from "@/components/defined-ui/timeline";
-
-
+import { historyData } from "@/data/history";
 
 const HistoryPage = () => {
   return (
