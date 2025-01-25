@@ -6,17 +6,13 @@ import Footer from "@/components/defined-ui/footer";
 import EventCard from "@/components/defined-ui/eventCard";
 import { eventsData } from "@/data/events";
 import { motion } from "framer-motion";
+import { categories } from "@/data/events";
+import imagesPath from "@/data/images";
+import { eventDetails } from "@/data/events";
 
 const EventsPage = () => {
   const [filter, setFilter] = useState("All");
 
-  const categories = [
-    "All",
-    "Workshops",
-    "Competitions",
-    "Talks",
-    "Social Events",
-  ];
   const filteredEvents =
     filter === "All"
       ? eventsData
@@ -32,23 +28,50 @@ const EventsPage = () => {
       <Header />
 
       {/* Hero Section */}
-      <div className="py-16 text-center bg-[#1e293b]">
-        <motion.h1
-          className="text-5xl font-bold text-gray-200 mb-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+      {/* Hero Section */}
+      <div
+        className="relative py-16 text-center bg-[#1e293b] bg-cover bg-center"
+        style={{
+          backgroundImage: `url('/path-to-your-background-image.jpg')`,
+        }}
+      >
+        {/* Overlay for better contrast */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        <motion.div
+          className="relative z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          Explore Our Events
-        </motion.h1>
-        <motion.p
-          className="text-gray-400 text-lg"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          Stay up-to-date with exciting events hosted by our council.
-        </motion.p>
+          {/* Foreground Image */}
+          <motion.img
+            src={imagesPath.events.heroBg}
+            alt="Hero Foreground"
+            className="mx-auto mb-6 w-32 h-32 rounded-full object-cover shadow-lg"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          />
+
+          {/* Text Content */}
+          <motion.h1
+            className="text-5xl font-bold text-gray-200 mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Explore Our Events
+          </motion.h1>
+          <motion.p
+            className="text-gray-400 text-lg"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Stay up-to-date with exciting events hosted by our council.
+          </motion.p>
+        </motion.div>
       </div>
 
       {/* Filter Section */}

@@ -12,6 +12,9 @@ const imagesPath = {
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
     history: "https://images.unsplash.com/photo-1532094349884-543bc11b234d",
   },
+  events: {
+    heroBg: "",
+  },
 };
 
 export default imagesPath;
