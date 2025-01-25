@@ -4,7 +4,7 @@
 - [X] Implement the general image path 
 - [] images ka carousel banana hain in the home page
 - [x] niche achievements ka background badalna hain
-- [] sara kuch data mein convert karna hain
+- [x] sara kuch data mein convert karna hain
 - [] particle effect implement karna hain
 
 ## About Us
