@@ -7,6 +7,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { Mail, Send, Phone } from "lucide-react";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
+import { genSecDetails } from "@/data/members";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -79,21 +80,21 @@ const ContactUs = () => {
               <div className="flex items-center space-x-4">
                 <Mail className="text-[#0A66C2] text-2xl" />
                 <a
-                  href="mailto:Gensec_Scitech_Gymkhana@iitbhilai.ac.in?subject=Inquiry%20from%20Scitech%20Website"
+                  href={`mailto:${genSecDetails.email}`}
                   className="hover:text-[#0A66C2] transition-colors"
                   onClick={(e) => {
                     // Optional: You can add additional tracking or logging here if needed
-                    window.location.href = `mailto:Gensec_Scitech_Gymkhana@iitbhilai.ac.in?subject=Inquiry%20from%20Scitech%20Website`;
+                    window.location.href = `mailto:${genSecDetails.email}?subject=Inquiry%20from%20Scitech%20Website`;
                     e.preventDefault(); // Prevent default link behavior
                   }}
                 >
-                  Gensec_Scitech_Gymkhana@iitbhilai.ac.in
+                  {genSecDetails.email}
                 </a>
               </div>
 
               <div className="flex items-center space-x-4">
                 <Phone className="text-[#0A66C2] text-2xl" />
-                <p>+91 8708943859</p>
+                <p>+91 {genSecDetails.phone}</p>
               </div>
             </div>
 
