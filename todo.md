@@ -25,7 +25,7 @@
 - [] image tap carousel feature
 
 ## Other Pages
-- [] history ka page banana hain
+- [x] history ka page banana hain
 - [x] join ka page banana hain
 - [] Activities and events sections
 - [] Achievements section
