@@ -34,7 +34,7 @@
 
 ## Contact Page 
 - [] email id implementation 
-- [] 
+- [x] contact form implemenation
 
 
 ## Data 
