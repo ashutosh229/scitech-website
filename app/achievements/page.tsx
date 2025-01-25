@@ -1,6 +1,6 @@
 "use client";
 // Import necessary libraries and components
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/defined-ui/header";
 import Footer from "@/components/defined-ui/footer";
@@ -8,7 +8,30 @@ import imagesPath from "@/data/images";
 import { Carousel } from "@/components/ui/carousel";
 import { achievements } from "@/data/achievements";
 
-const AboutUs = () => {
+const AchievementsPage = () => {
+  // Pagination state: current page and items per page
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6; // Number of achievements per page
+
+  // Calculate the start and end index for current page
+  const indexOfLastAchievement = currentPage * itemsPerPage;
+  const indexOfFirstAchievement = indexOfLastAchievement - itemsPerPage;
+  const currentAchievements = achievements.slice(
+    indexOfFirstAchievement,
+    indexOfLastAchievement
+  );
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(achievements.length / itemsPerPage);
+
+  // Handle page change
+  const nextPage = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+  const prevPage = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
   return (
     <div className="min-h-screen bg-[#101323] text-white">
       <Header />
@@ -41,7 +64,7 @@ const AboutUs = () => {
           transition={{ duration: 0.8 }}
         >
           <Carousel className="flex flex-wrap justify-center space-x-6 space-y-6 overflow-hidden">
-            {achievements.map((achievement, index) => (
+            {currentAchievements.map((achievement, index) => (
               <motion.div
                 key={index}
                 className="bg-gray-800 text-white rounded-lg p-6 shadow-lg w-full sm:w-[48%] md:w-[30%] hover:scale-105 transition-all duration-300"
@@ -80,10 +103,31 @@ const AboutUs = () => {
             ))}
           </Carousel>
         </motion.div>
+
+        {/* Pagination Controls */}
+        <div className="flex justify-center mt-8 space-x-4">
+          <button
+            onClick={prevPage}
+            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50"
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <span className="text-lg text-white">
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={nextPage}
+            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50"
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
+        </div>
       </div>
       <Footer />
     </div>
   );
 };
 
-export default AboutUs;
+export default AchievementsPage;
