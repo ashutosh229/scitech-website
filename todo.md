@@ -3,8 +3,9 @@
 ## Home Page
 - [X] Implement the general image path 
 - [] images ka carousel banana hain in the home page
-- [] niche achievements ka background badalna hain
+- [x] niche achievements ka background badalna hain
 - [] sara kuch data mein convert karna hain
+- [] particle effect implement karna hain
 
 ## About Us
 - [x] Mission Statement 
@@ -27,8 +28,9 @@
 ## Other Pages
 - [x] history ka page banana hain
 - [x] join ka page banana hain
+- [x] Achievements section
 - [] Activities and events sections
-- [] Achievements section
+
 
 ## Contact Page 
 - [] email id implementation 
