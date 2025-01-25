@@ -32,6 +32,10 @@
 - [] Activities and events sections
 - [] Achievements section
 
+## Contact Page 
+- [] email id implementation 
+- [] 
+
 
 ## Data 
 - [] Images of the clubs carousel 
