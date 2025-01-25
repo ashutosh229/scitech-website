@@ -6,6 +6,7 @@
 - [] images ka carousel chahiye
 - [] niche achievements ka background badalna hain 
 - [] sara kuch data mein convert karna hain
+- [] implementation of the email bar in footer
 
 ## About Us
 - [x] Mission Statement 

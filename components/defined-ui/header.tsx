@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import routes from "@/data/links";
 
-const Header = () => {
+const Header = ({ className = "" }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Header = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled ? "bg-black/80 backdrop-blur-lg shadow-lg" : "bg-transparent"
-      }`}
+      } ${className}`}
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo and Heading Section */}
