@@ -9,7 +9,7 @@ const routes: Routes = {
   events: "/events",
   achievements: "/achievements",
   clubs: "/#clubs",
-  team: "/team",
+  developer: "/developer",
   contact: "/contact",
   history: "/history",
   join: "/join",
@@ -23,7 +23,7 @@ export const quickLinks = [
   "Events",
   "Achievements",
   "Clubs",
-  "Team",
+  "Developer",
   "Contact",
 ];
 

@@ -5,7 +5,7 @@ export type Routes = {
   events: string;
   achievements: string;
   clubs: string;
-  team: string;
+  developer: string;
   contact: string;
   history: string;
   join: string;
