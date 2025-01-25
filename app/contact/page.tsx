@@ -163,6 +163,28 @@ const ContactUs = () => {
             </form>
           </div>
         </div>
+
+        {/* Sponsorship Section */}
+        <div className="mt-16 bg-[#0A66C2]/10 p-8 rounded-xl border border-white/10">
+          <h3 className="text-3xl text-white mb-6 text-center font-bold">
+            Interested in Sponsorship?
+          </h3>
+          <p className="text-gray-300 text-center mb-6">
+            If you are interested in sponsoring our events and initiatives, we
+            would love to hear from you. Connect with our General Secretary
+            today!
+          </p>
+          <div className="flex justify-center">
+            <a
+              href="mailto:Gensec_Scitech_Gymkhana@iitbhilai.ac.in?subject=Sponsorship%20Inquiry"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#0A66C2] text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-[#0A66C2]/90 transition-colors"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
       </div>
 
       <Footer />
