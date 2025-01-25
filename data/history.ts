@@ -31,3 +31,30 @@ export const historyData = [
     icon: FaFlag,
   },
 ];
+
+export const joinCategories = [
+  {
+    title: "Students (UG/PG)",
+    description:
+      "As a student, you can become a Member, Core Member, Secretary/Coordinator, or General Secretary of SciTech Affairs. Take part in shaping the future of innovation at IIT Bhilai!",
+    bgColor: "bg-gradient-to-r from-blue-500 to-purple-500",
+  },
+  {
+    title: "Professors",
+    description:
+      "Professors can become Faculty In-Charge (FIC) of specific clubs, guiding and mentoring students to achieve their goals and drive impactful activities.",
+    bgColor: "bg-gradient-to-r from-green-500 to-teal-500",
+  },
+  {
+    title: "Other Affiliates",
+    description:
+      "While you cannot formally join the club in an official capacity, you are encouraged to communicate with the club and participate in its activities.",
+    bgColor: "bg-gradient-to-r from-yellow-500 to-orange-500",
+  },
+  {
+    title: "Non-College Individuals",
+    description:
+      "You cannot hold positions in the club but can collaborate to conduct events, attend events, or partner with us to drive impactful initiatives.",
+    bgColor: "bg-gradient-to-r from-red-500 to-pink-500",
+  },
+];
