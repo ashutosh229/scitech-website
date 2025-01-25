@@ -7,11 +7,11 @@ import Footer from "@/components/defined-ui/footer";
 import imagesPath from "@/data/images";
 import { Carousel } from "@/components/ui/carousel";
 import { achievements } from "@/data/achievements";
+import { itemsPerPage } from "@/data/achievements";
 
 const AchievementsPage = () => {
   // Pagination state: current page and items per page
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6; // Number of achievements per page
 
   // Calculate the start and end index for current page
   const indexOfLastAchievement = currentPage * itemsPerPage;

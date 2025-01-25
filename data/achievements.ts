@@ -60,3 +60,5 @@ export const achievements: Achievement[] = [
     participants: "Shashwat Johri, Dakshraj Sadashiv Kashid, Sankalp Acharya",
   },
 ];
+
+export const itemsPerPage = 6;
