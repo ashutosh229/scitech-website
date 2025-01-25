@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { members } from "@/data/members";
 import { MemberCard } from "@/components/defined-ui/memberCard";
 import { TeamCarousel } from "@/components/defined-ui/teamCarousel";
+import routes from "@/data/links";
 
 const AboutUs = () => {
   const router = useRouter();
@@ -65,7 +66,7 @@ const AboutUs = () => {
           </p>
           <button
             onClick={() => {
-              router.push("/history");
+              router.push(routes.history);
             }}
             className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition-all"
           >
@@ -142,7 +143,7 @@ const AboutUs = () => {
           </p>
           <button
             onClick={() => {
-              router.push("/join");
+              router.push(routes.join);
             }}
             className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-all"
           >
