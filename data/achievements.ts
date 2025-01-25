@@ -62,3 +62,10 @@ export const achievements: Achievement[] = [
 ];
 
 export const itemsPerPage = 6;
+
+export const achievementsImages = [
+  {
+    src: "",
+    name: "",
+  },
+];

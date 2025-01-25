@@ -6,6 +6,8 @@ import Header from "@/components/defined-ui/header";
 import Footer from "@/components/defined-ui/footer";
 import { Timeline, TimelineItem } from "@/components/defined-ui/timeline";
 import { historyData } from "@/data/history";
+import routes from "@/data/links";
+import { achievementsImages } from "@/data/achievements";
 
 const HistoryPage = () => {
   return (
@@ -69,18 +71,18 @@ const HistoryPage = () => {
             whileInView={{ opacity: 1 }}
             transition={{ staggerChildren: 0.3 }}
           >
-            {[1, 2, 3, 4, 5, 6].map((index) => (
+            {achievementsImages.map((image, index) => (
               <motion.div
                 key={index}
                 className="relative overflow-hidden rounded-xl border border-white/20 bg-white/5 shadow-md transition-transform transform hover:scale-105"
               >
                 <img
-                  src={`https://via.placeholder.com/300x200?text=Achievement+${index}`}
+                  src={image.src}
                   alt={`Achievement ${index}`}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/60 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition-opacity">
-                  <p className="text-lg font-bold">Achievement {index}</p>
+                  <p className="text-lg font-bold">{image.name}</p>
                 </div>
               </motion.div>
             ))}
@@ -98,7 +100,7 @@ const HistoryPage = () => {
             Be Part of Our History
           </motion.h2>
           <motion.a
-            href="/join"
+            href={routes.join}
             className="px-8 py-4 bg-[#0A66C2] text-white text-lg rounded-md shadow-lg hover:bg-[#0A66C2]/90 transition-all ease-in-out"
             initial={{ scale: 0.9 }}
             whileHover={{ scale: 1.1 }}
