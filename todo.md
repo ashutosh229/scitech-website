@@ -5,6 +5,7 @@
 - [] Ojus bhaiya se images chahiye 
 - [] images ka carousel chahiye
 - [] niche achievements ka background badalna hain 
+- [] sara kuch data mein convert karna hain
 
 ## About Us
 - [x] Mission Statement 
@@ -38,6 +39,8 @@
 - [] sarein heads ka data chahiye
 - [] history ka data chahiye 
 - [] gallery ke images ka data chahiye
+
+
 
 
 
