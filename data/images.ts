@@ -4,6 +4,9 @@ const imagesPath = {
     story: "/timeline.png",
     mission: "/mission.png",
   },
+  home: {
+    scitechLogo: "scitech-new-logo.jpeg",
+  },
 };
 
 export default imagesPath;

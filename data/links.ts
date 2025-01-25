@@ -14,6 +14,16 @@ const routes: Routes = {
   join: "/join",
 };
 
+export const quickLinks = [
+  "About Us",
+  "Gallery",
+  "Events",
+  "Achievements",
+  "Clubs",
+  "Team",
+  "Contact",
+];
+
 const clubsRoutes = clubsName.map((club, index) => {
   const clubName = club.toLowerCase().replace(" ", "-");
   return {

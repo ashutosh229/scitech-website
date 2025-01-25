@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import routes from "@/data/links";
+import imagesPath from "@/data/images";
+import { quickLinks } from "@/data/links";
 
 const Header = ({ className = "" }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -37,7 +39,7 @@ const Header = ({ className = "" }) => {
             {/* Enlarged Logo */}
             <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg">
               <Image
-                src="scitech-new-logo.jpeg" // Replace with the correct path to your logo
+                src={imagesPath.home.scitechLogo} // Replace with the correct path to your logo
                 alt="SciTech Council Logo"
                 width={64}
                 height={64}
@@ -53,15 +55,7 @@ const Header = ({ className = "" }) => {
 
         {/* Navigation Menu */}
         <nav className="hidden md:flex items-center space-x-6">
-          {[
-            "About Us",
-            "Gallery",
-            "Events",
-            "Achievements",
-            "Clubs",
-            "Team",
-            "Contact",
-          ].map((item) => (
+          {quickLinks.map((item) => (
             <motion.div
               key={item}
               whileHover={{
