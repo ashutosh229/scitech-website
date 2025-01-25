@@ -14,7 +14,7 @@ const historyData = [
     title: "Formation of SciTech Council",
     description:
       "The Science and Technology Council was established to foster innovation and technical excellence among students.",
-    icon: MdSchool, // Pass the component reference
+    icon: MdSchool,
   },
   {
     year: "2018",
@@ -45,17 +45,17 @@ const HistoryPage = () => {
       <Header />
 
       <motion.div
-        className="container mx-auto px-4 py-16 md:py-24"
+        className="container mx-auto px-6 py-20 md:py-24"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1 }}
       >
         {/* Hero Section */}
-        <div className="text-center text-white mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center text-white mb-16">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
             Our Journey Through Time
           </h1>
-          <p className="text-lg text-gray-400">
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
             Explore the milestones and achievements of the SciTech Council over
             the years.
           </p>
@@ -63,10 +63,10 @@ const HistoryPage = () => {
 
         {/* Timeline Section */}
         <motion.div
-          className="bg-white/5 p-8 rounded-xl border border-white/10 shadow-lg"
+          className="bg-white/10 p-8 rounded-xl border border-white/20 shadow-lg"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
           <Timeline>
             {historyData.map((item, index) => (
@@ -75,7 +75,8 @@ const HistoryPage = () => {
                 icon={item.icon}
                 date={item.year}
                 title={item.title}
-                description={item.description} // Pass the icon component reference
+                description={item.description}
+                // className="bg-white/20 p-4 rounded-lg shadow-md mb-8"
               >
                 {/* <h3 className="text-2xl text-white font-semibold mb-2">
                   {item.year}
@@ -83,7 +84,7 @@ const HistoryPage = () => {
                 <h4 className="text-xl text-[#0A66C2] font-bold mb-1">
                   {item.title}
                 </h4>
-                <p className="text-gray-400">{item.description}</p> */}
+                <p className="text-gray-300">{item.description}</p> */}
               </TimelineItem>
             ))}
           </Timeline>
@@ -91,20 +92,19 @@ const HistoryPage = () => {
 
         {/* Achievements Gallery */}
         <div className="mt-16">
-          <h2 className="text-3xl text-white text-center mb-8 font-bold">
+          <h2 className="text-3xl text-white text-center mb-12 font-bold">
             Achievements Gallery
           </h2>
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ staggerChildren: 0.2 }}
+            transition={{ staggerChildren: 0.3 }}
           >
             {[1, 2, 3, 4, 5, 6].map((index) => (
               <motion.div
                 key={index}
-                className="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-md"
-                whileHover={{ scale: 1.05 }}
+                className="relative overflow-hidden rounded-xl border border-white/20 bg-white/5 shadow-md transition-transform transform hover:scale-105"
               >
                 <img
                   src={`https://via.placeholder.com/300x200?text=Achievement+${index}`}
@@ -122,7 +122,7 @@ const HistoryPage = () => {
         {/* Call to Action */}
         <div className="mt-16 text-center">
           <motion.h2
-            className="text-3xl text-white font-bold mb-6"
+            className="text-3xl text-white font-bold mb-8"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -131,7 +131,7 @@ const HistoryPage = () => {
           </motion.h2>
           <motion.a
             href="/join"
-            className="px-8 py-4 bg-[#0A66C2] text-white text-lg rounded-md shadow hover:bg-[#0A66C2]/90 transition"
+            className="px-8 py-4 bg-[#0A66C2] text-white text-lg rounded-md shadow-lg hover:bg-[#0A66C2]/90 transition-all ease-in-out"
             initial={{ scale: 0.9 }}
             whileHover={{ scale: 1.1 }}
           >
