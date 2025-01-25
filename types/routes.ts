@@ -9,4 +9,6 @@ export type Routes = {
   contact: string;
   history: string;
   join: string;
+  termsOfService: string;
+  privacyPolicy: string;
 };

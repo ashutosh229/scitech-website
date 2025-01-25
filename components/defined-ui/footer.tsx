@@ -10,25 +10,11 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
+import routes, { quickLinks } from "@/data/links";
+import { genSecDetails } from "@/data/members";
+import { socialLinks } from "@/data/links";
 
 const Footer = () => {
-  const quickLinks = [
-    "About Us",
-    "Gallery",
-    "Events",
-    "Achievements",
-    "Clubs",
-    "Team",
-    "Contact",
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: "#", color: "text-blue-600" },
-    { icon: Twitter, href: "#", color: "text-sky-400" },
-    { icon: Instagram, href: "#", color: "text-pink-500" },
-    { icon: Linkedin, href: "#", color: "text-blue-700" },
-  ];
-
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white py-16">
       <div className="container mx-auto px-6">
@@ -86,18 +72,18 @@ const Footer = () => {
 
             <div className="space-y-4 text-gray-300">
               <a
-                href="mailto:Gensec_Scitech_Gymkhana@iitbhilai.ac.in"
+                href={`mailto:${genSecDetails.email}`}
                 className="flex items-center space-x-3 hover:text-white transition-all"
               >
                 <Mail className="text-white" />
-                <span>Email: Gensec_Scitech_Gymkhana@iitbhilai.ac.in</span>
+                <span>Email: {genSecDetails.email}</span>
               </a>
               <a
-                href="tel:+918708943859"
+                href={`tel:+91${genSecDetails.phone}`}
                 className="flex items-center space-x-3 hover:text-white transition-all"
               >
                 <Phone className="text-white" />
-                <span>Phone: +91 8708943859</span>
+                <span>Phone: +91{genSecDetails.phone} </span>
               </a>
             </div>
 
@@ -127,19 +113,19 @@ const Footer = () => {
         >
           <p>
             © {new Date().getFullYear()}{" "}
-            <Link href={"/"} className="text-blue-700">
+            <Link href={routes.home} className="text-blue-700">
               Science and Technology Council, IIT Bhilai
             </Link>
           </p>
           <div className="flex justify-center space-x-4">
             <Link
-              href="/privacy-policy"
+              href={routes.privacyPolicy}
               className="hover:text-white transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/terms-of-service"
+              href={routes.termsOfService}
               className="hover:text-white transition-colors"
             >
               Terms of Service

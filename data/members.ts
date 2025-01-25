@@ -26,3 +26,8 @@ export const members: Member[] = [
     position: "DSAI Coordiant",
   },
 ];
+
+export const genSecDetails = {
+  email: "Gensec_Scitech_Gymkhana@iitbhilai.ac.in",
+  phone: "8708943859",
+};
