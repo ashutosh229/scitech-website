@@ -5,8 +5,7 @@ import Header from "@/components/defined-ui/header";
 import { galleryImages } from "@/data/galleryImages";
 import EventCard from "@/components/defined-ui/galleryCard";
 import Footer from "@/components/defined-ui/footer";
-
-const ITEMS_PER_PAGE = 8;
+import { ITEMS_PER_PAGE } from "@/data/galleryImages";
 
 const GalleryPage = () => {
   const [currentPage, setCurrentPage] = useState(1);

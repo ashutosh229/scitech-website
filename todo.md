@@ -29,7 +29,9 @@
 - [x] history ka page banana hain
 - [x] join ka page banana hain
 - [x] Achievements section
-- [] Activities and events sections
+
+## Events Page 
+- [] events page
 
 
 ## Contact Page 
