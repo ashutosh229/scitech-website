@@ -19,6 +19,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import routes, { clubsRoutes } from "@/data/links";
 import clubs from "@/data/clubs";
+import imagesPath from "@/data/images";
 
 export default function Home() {
   const router = useRouter();
@@ -230,7 +231,7 @@ export default function Home() {
               className="relative h-[400px] rounded-lg overflow-hidden shadow-2xl"
             >
               <Image
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4"
+                src={imagesPath.home.achievements}
                 alt="Achievements"
                 fill
                 className="object-cover"
@@ -256,7 +257,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link href={"/achievements"} passHref>
+                <Link href={routes.achievements} passHref>
                   <Button className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
                     View All Achievements
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2" />
@@ -300,7 +301,7 @@ export default function Home() {
               className="relative h-[400px] rounded-lg overflow-hidden shadow-2xl"
             >
               <Image
-                src="https://images.unsplash.com/photo-1532094349884-543bc11b234d"
+                src={imagesPath.home.history}
                 alt="History"
                 fill
                 className="object-cover"
