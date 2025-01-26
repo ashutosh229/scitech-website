@@ -4,9 +4,7 @@ import React, { useState } from "react";
 import Header from "@/components/defined-ui/header";
 import Footer from "@/components/defined-ui/footer";
 import { FaLocationDot } from "react-icons/fa6";
-import { Mail, Send, Phone } from "lucide-react";
-import * as XLSX from "xlsx";
-import { saveAs } from "file-saver";
+import { Mail, Phone } from "lucide-react";
 import { genSecDetails } from "@/data/members";
 
 const ContactUs = () => {
@@ -29,31 +27,13 @@ const ContactUs = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add form submission logic
-    const worksheet = XLSX.utils.json_to_sheet([formData]);
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(
-      workbook,
-      worksheet,
-      "Contact Form Submissions"
-    );
-    const excelBuffer = XLSX.write(workbook, {
-      bookType: "xlsx",
-      type: "array",
-    });
-    const blob = new Blob([excelBuffer], {
-      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-    });
-    saveAs(
-      blob,
-      `Contact_Submission_${new Date().toISOString().slice(0, 10)}.xlsx`
-    );
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-      subject: "",
-    });
+    const { name, email, subject, message } = formData;
+    const mailtoLink = `mailto:${
+      genSecDetails.email
+    }?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    )}`;
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -82,11 +62,6 @@ const ContactUs = () => {
                 <a
                   href={`mailto:${genSecDetails.email}`}
                   className="hover:text-[#0A66C2] transition-colors"
-                  onClick={(e) => {
-                    // Optional: You can add additional tracking or logging here if needed
-                    window.location.href = `mailto:${genSecDetails.email}?subject=Inquiry%20from%20Scitech%20Website`;
-                    e.preventDefault(); // Prevent default link behavior
-                  }}
                 >
                   {genSecDetails.email}
                 </a>
