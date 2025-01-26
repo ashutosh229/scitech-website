@@ -1,92 +1,70 @@
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+"use client";
 
-export const particlesInit = async (main: any) => {
-  await loadFull(main);
-};
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Member } from "@/types/member";
 
-export const particleOptions = {
-  background: {
-    color: {
-      value: "#000000", // Background color
-    },
-  },
-  fpsLimit: 120, // Limits FPS
-  particles: {
-    number: {
-      value: 50,
-      density: {
-        enable: true,
-        area: 800, // Particle density
-      },
-    },
-    color: {
-      value: ["#ffffff", "#00ccff", "#ff66cc"],
-    },
-    shape: {
-      type: "circle",
-    },
-    opacity: {
-      value: 0.8,
-      random: true,
-      animation: {
-        enable: true,
-        speed: 1,
-        minimumValue: 0.3,
-        sync: false,
-      },
-    },
-    size: {
-      value: 4,
-      random: true,
-      animation: {
-        enable: true,
-        speed: 10,
-        minimumValue: 0.1,
-        sync: false,
-      },
-    },
-    move: {
-      enable: true,
-      speed: 2,
-      direction: undefined, // Random movement
-      random: false,
-      straight: false,
-      outModes: "out", // Updated to a valid string literal
-    },
-  },
-  interactivity: {
-    events: {
-      onHover: {
-        enable: true,
-        mode: "repulse",
-      },
-      onClick: {
-        enable: true,
-        mode: "push",
-      },
-      resize: true,
-    },
-    modes: {
-      repulse: {
-        distance: 100,
-        duration: 0.4,
-      },
-      push: {
-        quantity: 4,
-      },
-    },
-  },
-  detectRetina: true,
-};
+interface MemberCardProps {
+  member: Member;
+}
 
-export const particleMotion = () => {
+const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
+
   return (
-    <Particles
-      id="tsparticles"
-      //   options={particleOptions} // Updated options structure
-      init={particlesInit} // Initialize particles
-      className="absolute inset-0"
-    />
+    <div
+      className="relative w-[20rem] h-[24rem] bg-transparent"
+      onClick={handleFlip}
+      style={{ perspective: "1000px" }} // Adds depth for 3D effect
+    >
+      <motion.div
+        className="relative w-full h-full rounded-lg shadow-lg"
+        animate={{ rotateY: isFlipped ? 180 : 0 }} // Controls flip animation
+        transition={{ duration: 0.8 }} // Duration of the flip
+        style={{
+          transformStyle: "preserve-3d",
+        }}
+      >
+        {/* Front Side */}
+        <div
+          className="absolute w-full h-full bg-gray-800 rounded-lg flex flex-col items-center justify-center"
+          style={{
+            backfaceVisibility: "hidden",
+          }}
+        >
+          <Image
+            src={member.photo}
+            alt={member.name}
+            width={120}
+            height={120}
+            className="rounded-full object-cover mb-4"
+          />
+          <h3 className="text-xl font-bold text-white">{member.name}</h3>
+        </div>
+
+        {/* Back Side */}
+        <div
+          className="absolute w-full h-full bg-gray-900 rounded-lg flex flex-col justify-center items-center px-6"
+          style={{
+            backfaceVisibility: "hidden",
+            transform: "rotateY(180deg)",
+          }}
+        >
+          <h4 className="text-lg font-semibold text-blue-400 mb-2">
+            {member.position}
+          </h4>
+          <p className="text-sm text-gray-400 mb-2">Email: {member.email}</p>
+          <p className="text-sm text-gray-400 mb-4">Phone: {member.phone}</p>
+          <p className="text-sm text-white text-center">{member.note}</p>
+        </div>
+      </motion.div>
+    </div>
   );
 };
+
+export default MemberCard;
