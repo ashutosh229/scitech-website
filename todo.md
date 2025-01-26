@@ -23,7 +23,7 @@
 - [x] visuals 
 - [x] pagination
 - [x] extras
-- [] image tap carousel feature
+- [x] image tap carousel feature
 
 ## Other Pages
 - [x] history ka page banana hain
