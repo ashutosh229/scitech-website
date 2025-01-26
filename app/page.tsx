@@ -19,6 +19,7 @@ import routes, { clubsRoutes } from "@/data/links";
 import clubs from "@/data/clubs";
 import imagesPath from "@/data/images";
 import { particleMotion } from "@/components/defined-ui/partcileEffect";
+import SciTechCarousel from "@/components/defined-ui/scitechCarousel";
 
 export default function Home() {
   const router = useRouter();
@@ -113,6 +114,16 @@ export default function Home() {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+      </section>
+
+      {/* SciTech Carousel Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center text-white mb-8">
+            Discover SciTech
+          </h2>
+          <SciTechCarousel />
         </div>
       </section>
 

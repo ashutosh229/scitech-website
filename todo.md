@@ -4,8 +4,8 @@
 - [X] Implement the general image path 
 - [x] niche achievements ka background badalna hain
 - [x] sara kuch data mein convert karna hain
+- [x] images ka carousel banana hain in the home page
 - [] particle effect implement karna hain
-- [] images ka carousel banana hain in the home page
 
 ## About Us
 - [x] Mission Statement 
@@ -32,6 +32,9 @@
 
 ## Events Page 
 - [] events page
+
+## Clubs
+- [] clubs page
 
 
 ## Contact Page 
