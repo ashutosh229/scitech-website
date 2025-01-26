@@ -17,12 +17,12 @@ export const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
   };
 
   return (
-    <motion.div
+    <div
       className="relative w-[20rem] h-[24rem] bg-transparent perspective-1000"
       onClick={handleFlip}
     >
       <motion.div
-        className={`absolute w-full h-full rounded-lg shadow-lg transform transition-transform duration-700 ${
+        className={`relative w-full h-full rounded-lg shadow-lg transition-transform duration-700 ${
           isFlipped ? "rotate-y-180" : ""
         }`}
         style={{
@@ -30,7 +30,12 @@ export const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
         }}
       >
         {/* Front Side */}
-        <div className="absolute w-full h-full bg-gray-800 rounded-lg flex flex-col items-center justify-center backface-hidden">
+        <div
+          className="absolute w-full h-full bg-gray-800 rounded-lg flex flex-col items-center justify-center backface-hidden"
+          style={{
+            backfaceVisibility: "hidden",
+          }}
+        >
           <Image
             src={member.photo}
             alt={member.name}
@@ -45,6 +50,7 @@ export const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
         <div
           className="absolute w-full h-full bg-gray-900 rounded-lg flex flex-col justify-center items-center px-6 backface-hidden"
           style={{
+            backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
           }}
         >
@@ -56,6 +62,6 @@ export const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
           <p className="text-sm text-white text-center">{member.note}</p>
         </div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
