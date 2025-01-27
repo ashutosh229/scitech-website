@@ -1,8 +1,5 @@
 {
   "compilerOptions": {
-    "types": ["__WebpackModuleApi"], // Add this line
-    "typeRoots": ["./node_modules/@types", "./types"], // Include your custom type definitions
-
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
