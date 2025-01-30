@@ -1,9 +1,12 @@
-export function importAll(r: any): Record<string, string> {
+type RequireContext = {
+  keys: () => string[];
+  (id: string): string;
+};
+
+export function importAll(r: RequireContext): Record<string, string> {
   const images: Record<string, string> = {};
-
-  r.keys().forEach((item: string) => {
-    images[item.replace("./", "")] = r(item);
+  r.keys().forEach((key: string) => {
+    images[key.replace("./", "")] = r(key);
   });
-
   return images;
 }

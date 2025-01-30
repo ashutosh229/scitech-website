@@ -14,7 +14,7 @@ type ClubMember = {
   icon: string;
 };
 
-type Event = {
+export type Event = {
   title: string;
   description: string;
   location: string;
