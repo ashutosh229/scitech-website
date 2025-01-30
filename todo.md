@@ -36,7 +36,7 @@
 
 ## Clubs
 - [x] clubs page
-- [] clubs page ka type annotation ka issue solve karna hain
+- [x] clubs page ka type annotation ka issue solve karna hain
 
 
 ## Contact Page 
@@ -45,7 +45,7 @@
 
 
 ## Data
-- [] 
+- [] data cleaning karni hain
 
 
 
