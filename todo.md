@@ -42,13 +42,8 @@
 - [] email id implementation 
 
 
-## Data 
-- [] Images of the clubs carousel 
-- [] Background images for the home page 
-- [] Images in the home page for other sections 
-- [] sarein heads ka data chahiye
-- [] history ka data chahiye 
-- [] gallery ke images ka data chahiye
+## Data
+- [] 
 
 
 

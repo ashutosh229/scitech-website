@@ -89,18 +89,18 @@ export const images: Image[] = [
 ];
 
 export const blogs: { [key: string]: any } = {};
-clubsName.forEach((club) => {
-  const dynamicKey = club.toLowerCase().replace(" ", "-");
-  const blogsVariable = eval(`${dynamicKey}Blogs`);
-  blogs[club.toLowerCase().replace(" ", "-")] = blogsVariable;
-});
+// clubsName.forEach((club) => {
+//   const dynamicKey = club.toLowerCase().replace(" ", "-");
+//   const blogsVariable = eval(`${dynamicKey}Blogs`);
+//   blogs[club.toLowerCase().replace(" ", "-")] = blogsVariable;
+// });
 
 export const clubMembers: { [key: string]: any } = {};
-clubsName.forEach((club) => {
-  const dynamicKey = club.toLowerCase().replace(" ", "-");
-  const membersVariable = eval(`${dynamicKey}Members`);
-  clubMembers[club.toLowerCase().replace(" ", "-")] = membersVariable;
-});
+// clubsName.forEach((club) => {
+//   const dynamicKey = club.toLowerCase().replace(" ", "-");
+//   const membersVariable = eval(`${dynamicKey}Members`);
+//   clubMembers[club.toLowerCase().replace(" ", "-")] = membersVariable;
+// });
 
 export default clubs;
 export { clubsName };

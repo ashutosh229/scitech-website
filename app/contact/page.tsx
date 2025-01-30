@@ -61,6 +61,8 @@ const ContactUs = () => {
                 <Mail className="text-[#0A66C2] text-2xl" />
                 <a
                   href={`mailto:${genSecDetails.email}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-[#0A66C2] transition-colors"
                 >
                   {genSecDetails.email}
