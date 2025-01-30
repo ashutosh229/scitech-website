@@ -46,8 +46,9 @@
 
 ## Data
 - [] data cleaning karni hain
-
-
-
-
+- [] sarein clubs ki ek image jo home screen pe dikhegi in the carousel 
+- [] home screen ke scitech carousel ke liye images
+- [x] home screen ke achievements ke liye ek image 
+- [x] history denote karne ke liye ek image
+- [x] footer mein social links
 

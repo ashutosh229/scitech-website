@@ -28,13 +28,25 @@ export const quickLinks = [
 ];
 
 export const socialLinks = [
-  { icon: Facebook, href: "#", color: "text-blue-600" },
-  { icon: Twitter, href: "#", color: "text-sky-400" },
-  { icon: Instagram, href: "#", color: "text-pink-500" },
-  { icon: Linkedin, href: "#", color: "text-blue-700" },
+  {
+    icon: Facebook,
+    href: "https://www.facebook.com/iit.bh",
+    color: "text-blue-600",
+  },
+  { icon: Twitter, href: "https://x.com/IIT_Bhilai", color: "text-sky-400" },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/scitech_council/",
+    color: "text-pink-500",
+  },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/iit-bhilai-sci-tech-council-b962a7250/",
+    color: "text-blue-700",
+  },
   {
     icon: Github,
-    href: "#",
+    href: "https://github.com/scitech-iitbh",
     color: "text-gray-600",
   },
 ];
