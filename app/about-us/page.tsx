@@ -14,6 +14,8 @@ import { members } from "@/data/members";
 import { MemberCard } from "@/components/defined-ui/memberCard";
 import { TeamCarousel } from "@/components/defined-ui/teamCarousel";
 import routes from "@/data/links";
+import { aboutUsInformation } from "@/data/achievements";
+import { title } from "node:process";
 
 const AboutUs = () => {
   const router = useRouter();
@@ -42,11 +44,17 @@ const AboutUs = () => {
           </motion.h1>
         </motion.div>
 
-        {/* Mission Statements */}
+        {/* Stort Card */}
         <AboutCard></AboutCard>
-        <MissionCard></MissionCard>
-        <MissionCardV2></MissionCardV2>
-        <MissionCard></MissionCard>
+
+        {/* About Cards*/}
+        {aboutUsInformation.map((value, index) =>
+          index % 2 == 0 ? (
+            <MissionCard key={index} params={value}></MissionCard>
+          ) : (
+            <MissionCardV2 key={index} params={value}></MissionCardV2>
+          )
+        )}
 
         {/*History*/}
         <motion.div

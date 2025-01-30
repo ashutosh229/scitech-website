@@ -1,3 +1,5 @@
+import imagesPath from "./images";
+
 interface Achievement {
   title: string;
   details?: string;
@@ -63,9 +65,36 @@ export const achievements: Achievement[] = [
 
 export const itemsPerPage = 6;
 
+interface aboutUsInfo {
+  title: string;
+  content: string;
+  image: string;
+}
+
 export const achievementsImages = [
   {
     src: "",
     name: "",
+  },
+];
+
+export const aboutUsInformation: aboutUsInfo[] = [
+  {
+    title: "Our Mission",
+    content:
+      "To foster a vibrant culture of curiosity and creativity byorganizing engaging events, hands-on workshops, andcollaborative projects. We aim to inspire students to pushboundaries, develop cutting-edge solutions, and makeimpactful contributions to the world of science andtechnology.",
+    image: `${imagesPath.aboutUs.mission}`,
+  },
+  {
+    title: "Our Vision",
+    content:
+      "SciTech council aims to be a dynamic hub of innovation and collaboration, where students are empowered to explore, create, and lead in science and technology.",
+    image: `${imagesPath.aboutUs.vision}`,
+  },
+  {
+    title: "Our Values",
+    content:
+      "We believe in the power of innovation and encourage the pursuit of new ideas and creative solutions. Our community thrives on collaboration, bringing together diverse perspectives to foster teamwork and shared success. We balance hard work with fun, ensuring that our activities are engaging, enjoyable, and memorable.",
+    image: `${imagesPath.aboutUs.values}`,
   },
 ];

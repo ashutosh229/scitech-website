@@ -51,4 +51,6 @@
 - [x] home screen ke achievements ke liye ek image 
 - [x] history denote karne ke liye ek image
 - [x] footer mein social links
-
+- [] about us page ka hero image 
+- [] our story ki image 
+- [] 

@@ -3,7 +3,11 @@
 import imagesPath from "@/data/images";
 import { motion } from "framer-motion";
 
-export const MissionCardV2 = () => {
+export const MissionCardV2 = ({
+  params: { title, content, image },
+}: {
+  params: { title: string; content: string; image: string };
+}) => {
   return (
     <motion.div
       className="flex flex-col lg:flex-row gap-8 items-center"
@@ -14,23 +18,17 @@ export const MissionCardV2 = () => {
     >
       <div className="flex flex-1 justify-center">
         <img
-          src={imagesPath.aboutUs.mission}
+          src={image}
           alt="Mission"
           className="mission rounded-lg h-60 max-w-full object-contain"
         />
       </div>
       <div className="bg-[#101323] p-6 rounded-lg text-center flex-1">
         <h3 className="text-4xl font-bold mb-4 tracking-wider font-[junge] text-[#0A66C2]">
-          Our Mission
+          {title}
         </h3>
         <hr className="w-36 border-[#0A66C2] mx-auto my-4" />
-        <p className="text-sm leading-relaxed">
-          To foster a vibrant culture of curiosity and creativity by organizing
-          engaging events, hands-on workshops, and collaborative projects. We
-          aim to inspire students to push boundaries, develop cutting-edge
-          solutions, and make impactful contributions to the world of science
-          and technology.
-        </p>
+        <p className="text-sm leading-relaxed">{content}</p>
       </div>
     </motion.div>
   );

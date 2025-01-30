@@ -3,6 +3,8 @@ const imagesPath = {
     heroBg: "/about.jpg",
     story: "/timeline.png",
     mission: "/mission.png",
+    vision: "/vision.png",
+    values: "/values.png",
   },
   home: {
     scitechLogo: "scitech-new-logo.jpeg",
