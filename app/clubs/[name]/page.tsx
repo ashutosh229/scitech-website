@@ -26,16 +26,16 @@ const ClubPage = ({ params: { name } }: { params: { name: string } }) => {
   const clubMembersClub = clubMembers[`${name}`];
   return (
     <ClubTemplate
-      clubName="Epsilon"
-      clubLogo="epsilon_logo_new.png"
-      instagram="https://www.instagram.com/roboticsclub_iitbhilai/"
-      linkedin="https://www.linkedin.com/company/the-epsilon-club-iit-bhilai-robotics-club/"
-      youtube="https://www.youtube.com/@theepsilonclubiitbhilai2447/featured"
+      clubName={""}
+      clubLogo={""}
+      instagram={""}
+      linkedin={""}
+      youtube={""}
       images={images}
       blogs={clubBlogs}
       events={clubEvents}
       clubMembers={clubMembersClub}
-      clubDescription="The Data Science and Artificial Intelligence Club at IIT Bhilai is a dynamic hub for aspiring tech enthusiasts. It accelerates learning through cutting-edge workshops, exciting hackathons, and real-world projects. By bridging theory and practice, the club transforms students into innovative problem-solvers, ready to tackle the challenges of tomorrow's AI-driven world."
+      clubDescription={""}
     />
   );
 };

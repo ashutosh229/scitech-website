@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import BottomDrawer from "./drawer";
+import { EventType } from "@/types/events";
 
-interface Event {
-  title: string;
-  hosting: string;
-  month: string;
-  date: string;
-  time: string;
-  location: string;
-  year: string;
-  description: string;
-  image?: string;
-}
+// interface Event {
+//   title: string;
+//   hosting: string;
+//   month: string;
+//   date: string;
+//   time: string;
+//   location: string;
+//   year: string;
+//   description: string;
+//   image?: string;
+// }
 
 interface EventCardProps {
-  event: Event;
+  event: EventType;
 }
 
 const EventCard: React.FC<EventCardProps> = ({ event }) => {

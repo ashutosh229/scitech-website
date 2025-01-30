@@ -1,6 +1,5 @@
-// import { EventType } from "@/types/events";
-import type { Event } from "@/components/defined-ui/clubTemplate";
+import { EventType } from "@/types/events";
 
-const events: Event[] = [];
+const events: EventType[] = [];
 
 export default events;

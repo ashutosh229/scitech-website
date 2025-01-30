@@ -33,8 +33,10 @@
 ## Events Page 
 - [] events page
 
+
 ## Clubs
-- [] clubs page
+- [x] clubs page
+- [] clubs page ka type annotation ka issue solve karna hain
 
 
 ## Contact Page 

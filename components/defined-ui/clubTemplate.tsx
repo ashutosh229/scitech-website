@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import BlogCard from "./blogCard";
 import EventCard from "./eventCard";
 import Footer from "./footer";
+import { EventType } from "@/types/events";
 
 type ClubMember = {
   name: string;
@@ -14,17 +15,17 @@ type ClubMember = {
   icon: string;
 };
 
-export type Event = {
-  title: string;
-  description: string;
-  location: string;
-  date: string;
-  month: string;
-  year: string;
-  image: string;
-  hosting: string;
-  time: string;
-};
+// export type Event = {
+//   title: string;
+//   description: string;
+//   location: string;
+//   date: string;
+//   month: string;
+//   year: string;
+//   image: string;
+//   hosting: string;
+//   time: string;
+// };
 
 type ClubTemplateProps = {
   clubName: string;
@@ -36,7 +37,7 @@ type ClubTemplateProps = {
   github?: string;
   images: string[];
   blogs?: any[];
-  events?: Event[];
+  events?: EventType[];
   clubMembers: ClubMember[];
   clubAgenda?: string;
   clubDescription: string;
