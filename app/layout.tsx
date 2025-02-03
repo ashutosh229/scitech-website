@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ParticleMotion } from "@/components/defined-ui/partcileEffect";
+// import { ParticleMotion } from "@/components/defined-ui/partcileEffect";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -40,7 +40,7 @@ export default function RootLayout({
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
             >
-              <ParticleMotion></ParticleMotion>
+              {/* <ParticleMotion></ParticleMotion> */}
               <h1 className="absolute text-white text-4xl font-bold">
                 Loading...
               </h1>
