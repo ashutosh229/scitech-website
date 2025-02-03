@@ -2,7 +2,6 @@
 // Import necessary libraries and components
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Header from "@/components/defined-ui/header";
 import Footer from "@/components/defined-ui/footer";
 import imagesPath from "@/data/images";
@@ -11,11 +10,9 @@ import { MissionCard } from "@/components/defined-ui/missionCard";
 import { MissionCardV2 } from "@/components/defined-ui/missionCardv2";
 import { useRouter } from "next/navigation";
 import { members } from "@/data/members";
-import { MemberCard } from "@/components/defined-ui/memberCard";
 import { TeamCarousel } from "@/components/defined-ui/teamCarousel";
 import routes from "@/data/links";
 import { aboutUsInformation } from "@/data/achievements";
-import { title } from "node:process";
 
 const AboutUs = () => {
   const router = useRouter();
@@ -66,7 +63,7 @@ const AboutUs = () => {
         >
           <h2 className="text-3xl font-bold mb-6">Our History</h2>
           <p className="text-lg leading-relaxed mb-6">
-            Established in [Year], the SciTech Council has grown from a small
+            Established in 2016, the SciTech Council has grown from a small
             group of enthusiasts to a vibrant community dedicated to advancing
             science and technology within our college. Over the years, we’ve
             organized numerous hackathons, workshops, and lectures that have
@@ -82,31 +79,6 @@ const AboutUs = () => {
           </button>
         </motion.div>
 
-        {/* Team Section */}
-        {/* <motion.div
-          className="mb-12"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 12 }}
-        >
-          <h2 className="mt-50 text-3xl font-bold mb-4 text-center">
-            Meet Our Team
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {members.map((member) => (
-              <motion.div
-                key={member.name}
-                className="relative w-[22rem] h-[26rem] bg-gray-700 p-4 rounded-lg shadow-lg flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.4 }}
-              >
-                <MemberCard member={member} />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div> */}
-
         <motion.div
           className="mb-12"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -119,23 +91,6 @@ const AboutUs = () => {
           </h2>
           <TeamCarousel members={members} />
         </motion.div>
-
-        {/* Activities Section */}
-        {/* <motion.div
-          className="mb-12"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-3xl font-bold mb-4">What We Do</h2>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Organize hackathons and coding competitions</li>
-            <li>Host workshops and seminars on cutting-edge technology</li>
-            <li>Collaborate with industry leaders and alumni</li>
-            <li>Foster innovation through project-based learning</li>
-          </ul>
-        </motion.div> */}
 
         {/* Call to Action */}
         <motion.div

@@ -11,3 +11,22 @@ export type EventType = {
   image: string;
   isSingleEvent: boolean;
 };
+
+export interface Achievement {
+  title: string;
+  details?: string;
+  participants: string;
+}
+
+export interface Image {
+  src: string;
+  alt: string;
+  name: string;
+  href: string;
+}
+
+export interface aboutUsInfo {
+  title: string;
+  content: string;
+  image: string;
+}

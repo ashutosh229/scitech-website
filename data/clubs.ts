@@ -1,3 +1,5 @@
+import { Image } from "@/types/events";
+
 const clubsName = [
   "DSAI",
   "Electromos",
@@ -10,13 +12,6 @@ const clubsName = [
   "Epsilon",
   "Ingenuity",
 ];
-
-interface Image {
-  src: string;
-  alt: string;
-  name: string;
-  href: string;
-}
 
 const clubs = clubsName.map((club, index) => {
   return {

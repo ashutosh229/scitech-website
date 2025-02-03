@@ -1,10 +1,6 @@
+import { aboutUsInfo } from "./../types/events";
 import imagesPath from "./images";
-
-interface Achievement {
-  title: string;
-  details?: string;
-  participants: string;
-}
+import { Achievement } from "@/types/events";
 
 export const achievements: Achievement[] = [
   {
@@ -64,12 +60,6 @@ export const achievements: Achievement[] = [
 ];
 
 export const itemsPerPage = 6;
-
-interface aboutUsInfo {
-  title: string;
-  content: string;
-  image: string;
-}
 
 export const achievementsImages = [
   {

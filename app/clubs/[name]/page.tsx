@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { blogs, clubMembers } from "@/data/clubs";
 import ClubTemplate from "@/components/defined-ui/clubTemplate";
