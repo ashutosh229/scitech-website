@@ -54,6 +54,9 @@ export const clubLogos: Image[] = [
     description: "",
     blogs: gdgBlogs,
     members: gdgMembers,
+    twitter: "",
+    github: "",
+    agenda: "",
   },
   {
     src: "club_logo/SES Logo.png",
@@ -66,6 +69,9 @@ export const clubLogos: Image[] = [
     description: "",
     blogs: sesBlogs,
     members: sesMembers,
+    twitter: "",
+    github: "",
+    agenda: "",
   },
   {
     src: "club_logo/BIB.png",
@@ -78,6 +84,9 @@ export const clubLogos: Image[] = [
     description: "",
     blogs: bibBlogs,
     members: bibMembers,
+    twitter: "",
+    github: "",
+    agenda: "",
   },
   {
     src: "club_logo/OPENLAKE.png",
@@ -90,6 +99,9 @@ export const clubLogos: Image[] = [
     description: "",
     blogs: openlakeBlogs,
     members: openlakeMembers,
+    twitter: "",
+    github: "",
+    agenda: "",
   },
   {
     src: "club_logo/Motorsports.png",
@@ -102,6 +114,9 @@ export const clubLogos: Image[] = [
     description: "",
     blogs: motorsportsBlogs,
     members: motorsportsMembers,
+    twitter: "",
+    github: "",
+    agenda: "",
   },
   {
     src: "club_logo/epsilon_logo_new.png",
@@ -114,6 +129,9 @@ export const clubLogos: Image[] = [
     description: "",
     blogs: epsilonBlogs,
     members: epsilonMembers,
+    twitter: "",
+    github: "",
+    agenda: "",
   },
   {
     src: "club_logo/ING.png",
@@ -126,6 +144,9 @@ export const clubLogos: Image[] = [
     description: "",
     blogs: ingenuityBlogs,
     members: ingenuityMembers,
+    twitter: "",
+    github: "",
+    agenda: "",
   },
   {
     src: "club_logo/DSAI.png",
@@ -138,6 +159,9 @@ export const clubLogos: Image[] = [
     description: "",
     blogs: dsaiBlogs,
     members: dsaiMembers,
+    twitter: "",
+    github: "",
+    agenda: "",
   },
   {
     src: "club_logo/Electromos.png",
@@ -150,6 +174,9 @@ export const clubLogos: Image[] = [
     description: "",
     blogs: electromosBlogs,
     members: electromosMembers,
+    twitter: "",
+    github: "",
+    agenda: "",
   },
   {
     src: "club_logo/DSAI.png",
@@ -162,6 +189,9 @@ export const clubLogos: Image[] = [
     description: "",
     blogs: spectreBlogs,
     members: spectreMembers,
+    twitter: "",
+    github: "",
+    agenda: "",
   },
 ];
 

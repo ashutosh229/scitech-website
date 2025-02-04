@@ -35,10 +35,13 @@ const ClubPage = ({ params: { name } }: { params: { name: string } }) => {
       clubLogo={club.src}
       instagram={club.instagram}
       linkedin={club.linkedin}
+      twitter={club.twitter}
       youtube={club.youtube}
+      github={club.github}
       clubDescription={club.description}
       blogs={club.blogs}
       clubMembers={club.members}
+      clubAgenda={club.agenda}
       images={images}
       events={clubEvents}
     />

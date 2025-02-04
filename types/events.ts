@@ -43,6 +43,9 @@ export interface Image {
   description: string;
   blogs: Blog[];
   members: ClubMembers[];
+  twitter: string;
+  github: string;
+  agenda: string;
 }
 
 export interface aboutUsInfo {
