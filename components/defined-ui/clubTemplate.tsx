@@ -7,6 +7,7 @@ import BlogCard from "./blogCard";
 import EventCard from "./eventCard";
 import Footer from "./footer";
 import { EventType } from "@/types/events";
+import { routes } from "@/data/links";
 
 type ClubMember = {
   name: string;
@@ -127,12 +128,12 @@ const ClubTemplate: React.FC<ClubTemplateProps> = ({
         <div className="flex items-center justify-center gap-2">
           <a href="/">
             <img
-              src={`/club_logo/${clubLogo}`}
+              src={clubLogo}
               alt="Logo"
               className="h-8 w-8 sm:h-14 sm:w-14"
             />
           </a>
-          <a className="hidden sm:flex" href="/">
+          <a className="hidden sm:flex" href={routes.home}>
             <h1 className="text-sm sm:text-xl font-[poppins]">{clubName}</h1>
           </a>
         </div>
