@@ -25,6 +25,8 @@ const ClubPage = ({ params: { name } }: { params: { name: string } }) => {
       );
       return dateB - dateA;
     });
+
+    
   const clubInfo = clubLogos.filter((value, index) => {
     return value.href === `/clubs/${name}`;
   });

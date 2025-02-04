@@ -6,7 +6,11 @@ export type PathsKey =
   | "ingenuity"
   | "openlake"
   | "electromos"
-  | "dsai";
+  | "dsai"
+  | "gdg"
+  | "bib"
+  | "motorsports"
+  | "spectre";
 
 const paths: Record<PathsKey, __WebpackModuleApi.RequireContext> = {
   epsilon: require.context(
@@ -36,6 +40,26 @@ const paths: Record<PathsKey, __WebpackModuleApi.RequireContext> = {
   ),
   dsai: require.context(
     "../public/dsai/gallery",
+    false,
+    /\.(png|jpe?g|svg|gif)$/
+  ),
+  gdg: require.context(
+    "../public/gdg/gallery",
+    false,
+    /\.(png|jpe?g|svg|gif)$/
+  ),
+  bib: require.context(
+    "../public/bib/gallery",
+    false,
+    /\.(png|jpe?g|svg|gif)$/
+  ),
+  motorsports: require.context(
+    "../public/motorsports/gallery",
+    false,
+    /\.(png|jpe?g|svg|gif)$/
+  ),
+  spectre: require.context(
+    "../public/spectre/gallery",
     false,
     /\.(png|jpe?g|svg|gif)$/
   ),
