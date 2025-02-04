@@ -18,7 +18,7 @@ import { useRouter } from "next/navigation";
 import routes, { clubsRoutes } from "@/data/links";
 import clubs from "@/data/clubs";
 import imagesPath from "@/data/images";
-import { ParticleMotion } from "@/components/defined-ui/partcileEffect";
+// import { ParticleMotion } from "@/components/defined-ui/partcileEffect";
 import SciTechCarousel from "@/components/defined-ui/scitechCarousel";
 
 export default function Home() {
