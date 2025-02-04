@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import { blogs, clubMembers } from "@/data/clubs";
+// import { blogs, clubMembers } from "@/data/clubs";
 import ClubTemplate from "@/components/defined-ui/clubTemplate";
 import { getGalleryImages, PathsKey } from "@/lib/getGalleryImages";
 import events from "@/data/club_events/epsilon/data";
+import { clubLogos } from "@/data/clubs";
 
 const ClubPage = ({ params: { name } }: { params: { name: string } }) => {
   const pathKeyInput: PathsKey = name as PathsKey;
@@ -24,20 +25,22 @@ const ClubPage = ({ params: { name } }: { params: { name: string } }) => {
       );
       return dateB - dateA;
     });
-  const clubBlogs = blogs[`${name}`];
-  const clubMembersClub = clubMembers[`${name}`];
+  const clubInfo = clubLogos.filter((value, index) => {
+    return value.href === `/clubs/${name}`;
+  });
+  const club = clubInfo[0];
   return (
     <ClubTemplate
-      clubName={""}
-      clubLogo={""}
-      instagram={""}
-      linkedin={""}
-      youtube={""}
+      clubName={club.name}
+      clubLogo={club.src}
+      instagram={club.instagram}
+      linkedin={club.linkedin}
+      youtube={club.youtube}
+      clubDescription={club.description}
+      blogs={club.blogs}
+      clubMembers={club.members}
       images={images}
-      blogs={clubBlogs}
       events={clubEvents}
-      clubMembers={clubMembersClub}
-      clubDescription={""}
     />
   );
 };

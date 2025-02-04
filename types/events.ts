@@ -18,11 +18,31 @@ export interface Achievement {
   participants: string;
 }
 
+export interface Blog {
+  title: string;
+  author: string;
+  time: string;
+  content: string;
+}
+
+export interface ClubMembers {
+  name: string;
+  email: string;
+  icon: string;
+  position: string;
+}
+
 export interface Image {
   src: string;
   alt: string;
   name: string;
   href: string;
+  instagram: string;
+  linkedin: string;
+  youtube: string;
+  description: string;
+  blogs: Blog[];
+  members: ClubMembers[];
 }
 
 export interface aboutUsInfo {
