@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-// import { blogs, clubMembers } from "@/data/clubs";
 import ClubTemplate from "@/components/defined-ui/clubTemplate";
 import { getGalleryImages, PathsKey } from "@/lib/getGalleryImages";
 import events from "@/data/club_events/epsilon/data";
@@ -10,8 +9,10 @@ import { clubLogos } from "@/data/clubs";
 const ClubPage = ({ params: { name } }: { params: { name: string } }) => {
   const pathKeyInput: PathsKey = name as PathsKey;
   const images = getGalleryImages(pathKeyInput);
-  const clubEvents = events.filter((event) => event.club === `${name}`);
-  clubEvents.length > 1 &&
+
+  // Filter club events
+  const clubEvents = events.filter((event) => event.club === name);
+  if (clubEvents.length > 1) {
     clubEvents.sort((a, b) => {
       const dateA: any = new Date(
         Number(a.year),
@@ -25,11 +26,16 @@ const ClubPage = ({ params: { name } }: { params: { name: string } }) => {
       );
       return dateB - dateA;
     });
+  }
 
-  const clubInfo = clubLogos.filter((value, index) => {
-    return value.href === `/clubs/${name}`;
-  });
+  // Get club information
+  const clubInfo = clubLogos.filter((value) => value.href === `/clubs/${name}`);
   const club = clubInfo[0];
+
+  if (!club) {
+    return <div>Club not found</div>;
+  }
+
   return (
     <ClubTemplate
       clubName={club.name}
@@ -50,3 +56,12 @@ const ClubPage = ({ params: { name } }: { params: { name: string } }) => {
 };
 
 export default ClubPage;
+
+// Generate Static Params
+export async function generateStaticParams() {
+  const paths = clubLogos.map((club) => ({
+    name: club.href.replace("/clubs/", ""),
+  }));
+
+  return paths.map((param) => ({ params: param }));
+}
