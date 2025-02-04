@@ -44,7 +44,7 @@ export const clubsCarouselImages = clubsName.map((club, index) => {
 
 export const clubLogos: Image[] = [
   {
-    src: "club_logo/GsDSC.png",
+    src: "/club_logo/GDSC.png",
     alt: "GDSC Club",
     name: "GDSC",
     href: "/clubs/gdg",
@@ -61,7 +61,7 @@ export const clubLogos: Image[] = [
     youtube: "",
   },
   {
-    src: "club_logo/SES Logo.png",
+    src: "/club_logo/SES Logo.png",
     alt: "SES Logo",
     name: "SES",
     href: "/clubs/ses",
@@ -78,7 +78,7 @@ export const clubLogos: Image[] = [
     agenda: "",
   },
   {
-    src: "club_logo/BIB.png",
+    src: "/club_logo/BIB.png",
     alt: "BIB Logo",
     name: "BlockChain",
     href: "/clubs/bib",
@@ -94,7 +94,7 @@ export const clubLogos: Image[] = [
     agenda: "",
   },
   {
-    src: "club_logo/OPENLAKE.png",
+    src: "/club_logo/OPENLAKE.png",
     alt: "OPENLAKE Club",
     name: "Openlake",
     href: "/clubs/openlake",
@@ -111,7 +111,7 @@ export const clubLogos: Image[] = [
     youtube: "",
   },
   {
-    src: "club_logo/Motorsports.png",
+    src: "/club_logo/Motorsports.png",
     alt: "Motorsports Club",
     name: "Motorsports",
     href: "/clubs/motorsports",
@@ -127,7 +127,7 @@ export const clubLogos: Image[] = [
     youtube: "",
   },
   {
-    src: "club_logo/epsilon_logo_new.png",
+    src: "/club_logo/epsilon_logo_new.png",
     alt: "Epsilon Logo",
     name: "Epsilon",
     href: "/clubs/epsilon",
@@ -144,7 +144,7 @@ export const clubLogos: Image[] = [
     agenda: "",
   },
   {
-    src: "club_logo/ING.png",
+    src: "/club_logo/ING.png",
     alt: "ING Logo",
     name: "Ingenuity",
     href: "/clubs/ingenuity",
@@ -160,7 +160,7 @@ export const clubLogos: Image[] = [
     agenda: "",
   },
   {
-    src: "club_logo/DSAI.png",
+    src: "/club_logo/DSAI.png",
     alt: "DSAI Logo",
     name: "DSAI",
     href: "/clubs/dsai",
@@ -177,7 +177,7 @@ export const clubLogos: Image[] = [
     agenda: "",
   },
   {
-    src: "club_logo/Electromos.png",
+    src: "/club_logo/Electromos.png",
     alt: "Electromos Logo",
     name: "Electromos",
     href: "/clubs/electromos",
@@ -194,7 +194,7 @@ export const clubLogos: Image[] = [
     youtube: "",
   },
   {
-    src: "club_logo/DSAI.png",
+    src: "/club_logo/DSAI.png",
     alt: "Spectra Logo",
     name: "Spectra",
     href: "/clubs/spectre",

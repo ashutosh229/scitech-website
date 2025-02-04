@@ -5,7 +5,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import BlogCard from "./blogCard";
 import EventCard from "./eventCard";
-import Footer from "./footer";
 import { EventType } from "@/types/events";
 import { routes } from "@/data/links";
 
@@ -269,11 +268,7 @@ const ClubTemplate: React.FC<ClubTemplateProps> = ({
           <SwiperSlide>
             <div className="p-6 overflow-y-scroll h-full">
               <div className="flex gap-8 mb-8 items-center">
-                <img
-                  src={`/club_logo/${clubLogo}`}
-                  className="h-16 w-16"
-                  alt="Logo"
-                ></img>
+                <img src={clubLogo} className="h-16 w-16" alt="Logo"></img>
                 <h2 className="text-4xl font-[600] font-[poppins] text-[#0A66C2]">
                   {clubName}
                 </h2>
@@ -402,7 +397,7 @@ const ClubTemplate: React.FC<ClubTemplateProps> = ({
           </div>
         )}
 
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </div>
     </div>
   );
