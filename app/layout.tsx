@@ -20,18 +20,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [showReloadEffect, setShowReloadEffect] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowReloadEffect(false);
-    }, 3000); // Show effect for 3 seconds
-    return () => clearTimeout(timer);
-  }, []);
+  // const [showReloadEffect, setShowReloadEffect] = useState(true);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowReloadEffect(false);
+  //   }, 3000); // Show effect for 3 seconds
+  //   return () => clearTimeout(timer);
+  // }, []);
   return (
     <html lang="en">
       <body>
-        {/* Reload Effect */}
-        {showReloadEffect && (
+        {/* {showReloadEffect && (
           <AnimatePresence>
             <motion.div
               className="fixed inset-0 flex items-center justify-center bg-black z-50"
@@ -41,21 +40,13 @@ export default function RootLayout({
               transition={{ duration: 1 }}
             >
               {/* <ParticleMotion></ParticleMotion> */}
-              <h1 className="absolute text-white text-4xl font-bold">
+        {/* <h1 className="absolute text-white text-4xl font-bold">
                 Loading...
               </h1>
             </motion.div>
-          </AnimatePresence>
-        )}
+          </AnimatePresence> */}
 
-        {/* Main Content */}
-        <div
-          className={
-            showReloadEffect ? "invisible" : "visible" + spaceGrotesk.className
-          }
-        >
-          {children}
-        </div>
+        <div className={spaceGrotesk.className}>{children}</div>
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import routes from "@/data/links";
+import { routes } from "@/data/links";
 import imagesPath from "@/data/images";
 import { quickLinks } from "@/data/links";
 

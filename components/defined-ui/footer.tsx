@@ -10,7 +10,7 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-import routes, { quickLinks } from "@/data/links";
+import { quickLinks, routes } from "@/data/links";
 import { genSecDetails } from "@/data/members";
 import { socialLinks } from "@/data/links";
 

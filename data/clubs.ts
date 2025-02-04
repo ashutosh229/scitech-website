@@ -44,7 +44,7 @@ export const clubsCarouselImages = clubsName.map((club, index) => {
 
 export const clubLogos: Image[] = [
   {
-    src: "club_logo/GDSC.png",
+    src: "club_logo/GsDSC.png",
     alt: "GDSC Club",
     name: "GDSC",
     href: "/clubs/gdg",
