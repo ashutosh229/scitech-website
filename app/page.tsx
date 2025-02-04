@@ -15,8 +15,8 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import routes, { clubsRoutes } from "@/data/links";
-import clubs from "@/data/clubs";
+import { routes, clubsRoutes } from "@/data/links";
+import { clubsCarouselImages } from "@/data/clubs";
 import imagesPath from "@/data/images";
 // import { ParticleMotion } from "@/components/defined-ui/partcileEffect";
 import SciTechCarousel from "@/components/defined-ui/scitechCarousel";
@@ -90,7 +90,7 @@ export default function Home() {
             }}
             className="overflow-hidden"
           >
-            {clubs.map((club) => (
+            {clubsCarouselImages.map((club) => (
               <SwiperSlide key={club.name}>
                 <motion.div
                   className="relative group overflow-hidden rounded-lg shadow-lg bg-gradient-to-br from-purple-600 to-blue-800"

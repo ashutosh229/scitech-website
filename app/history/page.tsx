@@ -6,7 +6,7 @@ import Header from "@/components/defined-ui/header";
 import Footer from "@/components/defined-ui/footer";
 import { Timeline, TimelineItem } from "@/components/defined-ui/timeline";
 import { historyData } from "@/data/history";
-import routes from "@/data/links";
+import { routes } from "@/data/links";
 import { achievementsImages } from "@/data/achievements";
 
 const HistoryPage = () => {

@@ -1,6 +1,28 @@
 import { Image } from "@/types/events";
 
-const clubsName = [
+import bibBlogs from "./blogs/Blockchain";
+import dsaiBlogs from "./blogs/Dsai";
+import electromosBlogs from "./blogs/Electromos";
+import gdgBlogs from "./blogs/GDSC";
+import sesBlogs from "./blogs/SES";
+import openlakeBlogs from "./blogs/OpenLake";
+import motorsportsBlogs from "./blogs/Motorsports";
+import epsilonBlogs from "./blogs/Epsilon";
+import ingenuityBlogs from "./blogs/Ingenuity";
+import spectreBlogs from "./blogs/Spectre";
+
+import bibMembers from "./members/Blockchain";
+import dsaiMembers from "./members/Dsai";
+import electromosMembers from "./members/Electromos";
+import gdgMembers from "./members/GDSC";
+import sesMembers from "./members/SES";
+import openlakeMembers from "./members/OpenLake";
+import motorsportsMembers from "./members/Motorsports";
+import epsilonMembers from "./members/Epsilon";
+import ingenuityMembers from "./members/Ingenuity";
+import spectreMembers from "./members/Spectre";
+
+export const clubsName = [
   "DSAI",
   "Electromos",
   "Spectre",
@@ -13,14 +35,14 @@ const clubsName = [
   "Ingenuity",
 ];
 
-const clubs = clubsName.map((club, index) => {
+export const clubsCarouselImages = clubsName.map((club, index) => {
   return {
     name: club,
     image: "club_carousel/" + `${club.toLowerCase()}` + ".png",
   };
 });
 
-export const images: Image[] = [
+export const clubLogos: Image[] = [
   {
     src: "club_logo/GDSC.png",
     alt: "GDSC Club",
@@ -96,6 +118,3 @@ clubsName.forEach((club) => {
   const membersVariable = eval(`${dynamicKey}Members`);
   clubMembers[club.toLowerCase().replace(" ", "-")] = membersVariable;
 });
-
-export default clubs;
-export { clubsName };

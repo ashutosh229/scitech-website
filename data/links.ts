@@ -2,7 +2,7 @@ import { Routes } from "@/types/routes";
 import { clubsName } from "./clubs";
 import { Facebook, Twitter, Linkedin, Instagram, Github } from "lucide-react";
 
-const routes: Routes = {
+export const routes: Routes = {
   home: "/",
   about: "/about-us",
   gallery: "/gallery",
@@ -51,12 +51,9 @@ export const socialLinks = [
   },
 ];
 
-const clubsRoutes = clubsName.map((club, index) => {
+export const clubsRoutes = clubsName.map((club, index) => {
   const clubName = club.toLowerCase().replace(" ", "-");
   return {
     [club]: `/clubs/${clubName}`,
   };
 });
-
-export default routes;
-export { clubsRoutes };

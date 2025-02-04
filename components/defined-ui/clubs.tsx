@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { images } from "@/data/clubs";
+import { clubLogos } from "@/data/clubs";
 import imagesPath from "@/data/images";
 
 const CircularImages: React.FC = () => {
@@ -35,8 +35,8 @@ const CircularImages: React.FC = () => {
           className="absolute w-28 h-28 sm:w-32 sm:h-32 lg:w-44 lg:h-44 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         />
 
-        {images.map((img, index) => {
-          const angle = (index / images.length) * (2 * Math.PI);
+        {clubLogos.map((img, index) => {
+          const angle = (index / clubLogos.length) * (2 * Math.PI);
           const x = centerX + radius * Math.cos(angle);
           const y = centerY + radius * Math.sin(angle);
 

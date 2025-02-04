@@ -11,7 +11,7 @@ import { MissionCardV2 } from "@/components/defined-ui/missionCardv2";
 import { useRouter } from "next/navigation";
 import { members } from "@/data/members";
 import { TeamCarousel } from "@/components/defined-ui/teamCarousel";
-import routes from "@/data/links";
+import { routes } from "@/data/links";
 import { aboutUsInformation } from "@/data/achievements";
 
 const AboutUs = () => {
