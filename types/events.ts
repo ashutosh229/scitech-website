@@ -33,7 +33,7 @@ export interface ClubMembers {
 }
 
 export interface Image {
-  id: number;
+  id: string;
   src: string;
   alt: string;
   name: string;

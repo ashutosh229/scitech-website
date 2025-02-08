@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 }
 
 // Server-side logic: Page Component
-const ClubPage = ({ params: { id } }: { params: { id: number } }) => {
+const ClubPage = ({ params: { id } }: { params: { id: string } }) => {
   const club = clubLogos.find((club) => club.id === id);
   if (!club) {
     return <NotFoundPage></NotFoundPage>;
