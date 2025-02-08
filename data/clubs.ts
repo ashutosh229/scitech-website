@@ -44,6 +44,7 @@ export const clubsCarouselImages = clubsName.map((club, index) => {
 
 export const clubLogos: Image[] = [
   {
+    id: 1,
     src: "/club_logo/GDSC.png",
     alt: "GDSC Club",
     name: "GDSC",
@@ -61,6 +62,7 @@ export const clubLogos: Image[] = [
     youtube: "",
   },
   {
+    id: 2,
     src: "/club_logo/SES Logo.png",
     alt: "SES Logo",
     name: "SES",
@@ -78,6 +80,7 @@ export const clubLogos: Image[] = [
     agenda: "",
   },
   {
+    id: 3,
     src: "/club_logo/BIB.png",
     alt: "BIB Logo",
     name: "BlockChain",
@@ -94,6 +97,7 @@ export const clubLogos: Image[] = [
     agenda: "",
   },
   {
+    id: 4,
     src: "/club_logo/OPENLAKE.png",
     alt: "OPENLAKE Club",
     name: "Openlake",
@@ -111,6 +115,7 @@ export const clubLogos: Image[] = [
     youtube: "",
   },
   {
+    id: 5,
     src: "/club_logo/Motorsports.png",
     alt: "Motorsports Club",
     name: "Motorsports",
@@ -127,6 +132,7 @@ export const clubLogos: Image[] = [
     youtube: "",
   },
   {
+    id: 6,
     src: "/club_logo/epsilon_logo_new.png",
     alt: "Epsilon Logo",
     name: "Epsilon",
@@ -144,6 +150,7 @@ export const clubLogos: Image[] = [
     agenda: "",
   },
   {
+    id: 7,
     src: "/club_logo/ING.png",
     alt: "ING Logo",
     name: "Ingenuity",
@@ -160,6 +167,7 @@ export const clubLogos: Image[] = [
     agenda: "",
   },
   {
+    id: 8,
     src: "/club_logo/DSAI.png",
     alt: "DSAI Logo",
     name: "DSAI",
@@ -177,6 +185,7 @@ export const clubLogos: Image[] = [
     agenda: "",
   },
   {
+    id: 9,
     src: "/club_logo/Electromos.png",
     alt: "Electromos Logo",
     name: "Electromos",
@@ -194,6 +203,7 @@ export const clubLogos: Image[] = [
     youtube: "",
   },
   {
+    id: 10,
     src: "/club_logo/DSAI.png",
     alt: "Spectra Logo",
     name: "Spectra",
