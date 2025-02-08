@@ -15,7 +15,7 @@
 - [x] Future Vision 
 - [x] Call to action
 - [x] Visuals and animations
-- [] card flip animation banana hain
+- [x] card flip animation banana hain
 
 ## Gallery
 - [x] initial setup 
@@ -59,3 +59,7 @@
 - [] history ka data chahiye 
 - [] kuch purani images for the history page 
 - [] 
+
+
+
+
