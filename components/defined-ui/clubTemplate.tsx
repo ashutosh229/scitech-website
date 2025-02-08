@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Controller } from "swiper/modules";
@@ -7,25 +9,8 @@ import BlogCard from "./blogCard";
 import EventCard from "./eventCard";
 import { EventType } from "@/types/events";
 import { routes } from "@/data/links";
-
-type ClubMember = {
-  name: string;
-  position: string;
-  email: string;
-  icon: string;
-};
-
-// export type Event = {
-//   title: string;
-//   description: string;
-//   location: string;
-//   date: string;
-//   month: string;
-//   year: string;
-//   image: string;
-//   hosting: string;
-//   time: string;
-// };
+import Image from "next/image";
+import { ClubMembers } from "@/types/events";
 
 type ClubTemplateProps = {
   clubName: string;
@@ -38,7 +23,7 @@ type ClubTemplateProps = {
   images: string[];
   blogs?: any[];
   events?: EventType[];
-  clubMembers: ClubMember[];
+  clubMembers: ClubMembers[];
   clubAgenda?: string;
   clubDescription: string;
 };
@@ -65,6 +50,13 @@ const ClubTemplate: React.FC<ClubTemplateProps> = ({
   const [isEnlargedView, setIsEnlargedView] = useState(false);
   const [currentBlog, setCurrentBlog] = useState<any>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    if (swiperRef1.current && swiperRef2.current) {
+      swiperRef1.current.controller.control = swiperRef2.current;
+      swiperRef2.current.controller.control = swiperRef1.current;
+    }
+  }, [swiperRef1, swiperRef2]);
 
   const openImage = (index: number) => {
     setSelectedImage(index);
@@ -126,10 +118,12 @@ const ClubTemplate: React.FC<ClubTemplateProps> = ({
       <div className="hidden w-1/4 sm:flex flex-col p-2 h-full">
         <div className="flex items-center justify-center gap-2">
           <a href="/">
-            <img
+            <Image
               src={clubLogo}
               alt="Logo"
               className="h-8 w-8 sm:h-14 sm:w-14"
+              width={8}
+              height={8}
             />
           </a>
           <a className="hidden sm:flex" href={routes.home}>
@@ -268,7 +262,13 @@ const ClubTemplate: React.FC<ClubTemplateProps> = ({
           <SwiperSlide>
             <div className="p-6 overflow-y-scroll h-full">
               <div className="flex gap-8 mb-8 items-center">
-                <img src={clubLogo} className="h-16 w-16" alt="Logo"></img>
+                <Image
+                  src={clubLogo}
+                  className="h-16 w-16"
+                  alt="Logo"
+                  width={16}
+                  height={16}
+                ></Image>
                 <h2 className="text-4xl font-[600] font-[poppins] text-[#0A66C2]">
                   {clubName}
                 </h2>
@@ -283,24 +283,27 @@ const ClubTemplate: React.FC<ClubTemplateProps> = ({
                   THE MINDS BEHIND THE
                 </h2>
                 <div className="grid grid-cols-2 mb:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                  {clubMembers.map((member, index) => (
-                    <div key={index} className="flex flex-col items-center">
-                      <img
-                        src={member.icon}
-                        className="h-24 w-24 rounded-full line-clamp-1"
-                        alt={member.name}
-                      />
-                      <h3 className="text-lg text-center font-[poppins] font-[500]">
-                        {member.name}
-                      </h3>
-                      <p className="text-sm font-[poppins] font-[300]">
-                        {member.position}
-                      </p>
-                      <p className="text-xs text-blue-600 font-[poppins] font-[300]">
-                        {member.email}
-                      </p>
-                    </div>
-                  ))}
+                  {clubMembers?.length > 0 &&
+                    clubMembers.map((member, index) => (
+                      <div key={index} className="flex flex-col items-center">
+                        <Image
+                          src={member.icon}
+                          className="h-24 w-24 rounded-full line-clamp-1"
+                          alt={member.name}
+                          width={24}
+                          height={24}
+                        />
+                        <h3 className="text-lg text-center font-[poppins] font-[500]">
+                          {member.name}
+                        </h3>
+                        <p className="text-sm font-[poppins] font-[300]">
+                          {member.position}
+                        </p>
+                        <p className="text-xs text-blue-600 font-[poppins] font-[300]">
+                          {member.email}
+                        </p>
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>
@@ -311,11 +314,13 @@ const ClubTemplate: React.FC<ClubTemplateProps> = ({
                 <h1 className="text-3xl text-center text-blue-700 font-[poppins] mb-4">
                   {events[0].title}
                 </h1>
-                <img
+                <Image
                   src={events[0].image}
                   className=" h-72 w-full object-contain rounded-lg"
                   alt="Event"
-                ></img>
+                  height={72}
+                  width={100}
+                ></Image>
                 <p className="my-4 whitespace-pre-line">
                   {events[0].description}
                 </p>
@@ -341,11 +346,13 @@ const ClubTemplate: React.FC<ClubTemplateProps> = ({
                   </h2>
                 )}
                 <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-4">
-                  {events &&
-                    events.map(
-                      (event, index) =>
-                        index > 0 && <EventCard key={index} event={event} />
-                    )}
+                  {events?.length > 1 &&
+                    events
+                      .slice(1)
+                      .map(
+                        (event, index) =>
+                          index > 0 && <EventCard key={index} event={event} />
+                      )}
                 </div>
               </div>
             </SwiperSlide>
@@ -353,12 +360,14 @@ const ClubTemplate: React.FC<ClubTemplateProps> = ({
           <SwiperSlide>
             <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 overflow-y-scroll h-full">
               {images.map((image, index) => (
-                <img
+                <Image
                   key={index}
                   onClick={() => openImage(index)}
                   src={image}
                   alt={`Gallery ${index + 1}`}
                   className="w-full h-full object-cover cursor-pointer rounded-lg"
+                  // height={}
+                  // width={}
                 />
               ))}
               {/* Add more images as needed */}
@@ -379,7 +388,7 @@ const ClubTemplate: React.FC<ClubTemplateProps> = ({
             >
               <i className="fas fa-chevron-left fa-2x  text-blue-800"></i>
             </button>
-            <img
+            <Image
               src={
                 selectedImage != null && images[selectedImage]
                   ? images[selectedImage]
@@ -387,6 +396,8 @@ const ClubTemplate: React.FC<ClubTemplateProps> = ({
               }
               alt=""
               className="w-2/3 h-2/3 rounded-md object-contain bg-center"
+              // height={}
+              // width={}
             />
             <button
               onClick={() => navigateImage("next")}

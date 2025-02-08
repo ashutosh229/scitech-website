@@ -46,15 +46,15 @@ const HistoryPage = () => {
                 date={item.year}
                 title={item.title}
                 description={item.description}
-                // className="bg-white/20 p-4 rounded-lg shadow-md mb-8"
+                className="bg-white/20 p-4 rounded-lg shadow-md mb-8"
               >
-                {/* <h3 className="text-2xl text-white font-semibold mb-2">
+                <h3 className="text-2xl text-white font-semibold mb-2">
                   {item.year}
                 </h3>
                 <h4 className="text-xl text-[#0A66C2] font-bold mb-1">
                   {item.title}
                 </h4>
-                <p className="text-gray-300">{item.description}</p> */}
+                <p className="text-gray-300">{item.description}</p>
               </TimelineItem>
             ))}
           </Timeline>

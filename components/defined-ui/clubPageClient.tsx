@@ -10,8 +10,12 @@ const ClubPageClient = ({ name }: { name: string }) => {
   const pathKeyInput: PathsKey = name as PathsKey;
   const images = getGalleryImages(pathKeyInput);
 
+  // Get club information
+  const clubInfo = clubLogos.filter((value) => value.href === `/clubs/${name}`);
+  const club = clubInfo[0];
+
   // Filter club events
-  const clubEvents = events.filter((event) => event.club === name);
+  const clubEvents = events.filter((event) => event.club === club.name);
   if (clubEvents.length > 1) {
     clubEvents.sort((a, b) => {
       const dateA: any = new Date(
@@ -27,10 +31,6 @@ const ClubPageClient = ({ name }: { name: string }) => {
       return dateB - dateA;
     });
   }
-
-  // Get club information
-  const clubInfo = clubLogos.filter((value) => value.href === `/clubs/${name}`);
-  const club = clubInfo[0];
 
   if (!club) {
     return <div>Club not found</div>;

@@ -1,3 +1,4 @@
+// TeamCarousel.tsx - Integrating Rotating Cube Effect
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -12,11 +13,10 @@ interface CarouselProps {
 export const TeamCarousel: React.FC<CarouselProps> = ({ members }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Automatically rotate cards
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % members.length);
-    }, 3000); // 3 seconds per card
+    }, 3000);
     return () => clearInterval(interval);
   }, [members.length]);
 
@@ -31,7 +31,7 @@ export const TeamCarousel: React.FC<CarouselProps> = ({ members }) => {
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="relative w-[20rem] h-[24rem] bg-gray-800 p-4 rounded-md shadow-md flex items-center justify-center">
+          <div className="relative w-[20rem] h-[24rem] flex items-center justify-center">
             <MemberCard member={members[currentIndex]} />
           </div>
         </motion.div>

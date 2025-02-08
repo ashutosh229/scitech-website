@@ -1,3 +1,4 @@
+// MemberCard.tsx - Rotating Cube Effect
 "use client";
 
 import React, { useState } from "react";
@@ -18,23 +19,18 @@ export const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
 
   return (
     <div
-      className="relative w-[20rem] h-[24rem] bg-transparent perspective-1000"
+      className="relative w-[20rem] h-[24rem] perspective-1000"
       onClick={handleFlip}
     >
       <motion.div
-        className={`relative w-full h-full rounded-lg shadow-lg transition-transform duration-700 ${
-          isFlipped ? "rotate-y-180" : ""
-        }`}
-        style={{
-          transformStyle: "preserve-3d",
-        }}
+        className="relative w-full h-full rounded-lg shadow-lg transition-transform duration-700"
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        style={{ transformStyle: "preserve-3d" }}
       >
         {/* Front Side */}
         <div
-          className="absolute w-full h-full bg-gray-800 rounded-lg flex flex-col items-center justify-center backface-hidden"
-          style={{
-            backfaceVisibility: "hidden",
-          }}
+          className="absolute w-full h-full bg-gray-800 rounded-lg flex flex-col items-center justify-center"
+          style={{ backfaceVisibility: "hidden" }}
         >
           <Image
             src={member.photo}
@@ -44,11 +40,12 @@ export const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
             className="rounded-full object-cover mb-4"
           />
           <h3 className="text-xl font-bold text-white">{member.name}</h3>
+          <p className="text-sm text-gray-400">{member.position}</p>
         </div>
 
         {/* Back Side */}
         <div
-          className="absolute w-full h-full bg-gray-900 rounded-lg flex flex-col justify-center items-center px-6 backface-hidden"
+          className="absolute w-full h-full bg-gray-900 rounded-lg flex flex-col justify-center items-center px-6"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",

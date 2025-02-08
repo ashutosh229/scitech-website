@@ -2,7 +2,7 @@ export type EventType = {
   title: string;
   hosting: string;
   club: string;
-  description: JSX.Element;
+  description: string;
   date: string;
   month: string;
   year: string;
