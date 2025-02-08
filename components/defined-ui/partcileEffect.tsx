@@ -1,93 +1,94 @@
-// import React from "react";
-// import Particles from "react-tsparticles";
-// import { loadSlim } from "@tsparticles/slim"; // Corrected import
-// import type { Engine } from "@tsparticles/engine"; // Ensures correct typing
-// import type { ISourceOptions } from "@tsparticles/engine"; // Corrected typing
+"use client";
 
-// export const particlesInit = async (engine: Engine): Promise<void> => {
-//   await loadSlim(engine);
-// };
+import React, { useEffect, useRef, useState } from "react";
 
-// export const particleOptions: ISourceOptions = {
-//   background: {
-//     color: {
-//       value: "#000000",
-//     },
-//   },
-//   fpsLimit: 120,
-//   particles: {
-//     number: {
-//       value: 50,
-//       density: {
-//         enable: true,
-//         value_area: 800, // Fixed incorrect property "area" to "value_area"
-//       },
-//     },
-//     color: {
-//       value: ["#ffffff", "#00ccff", "#ff66cc"],
-//     },
-//     shape: {
-//       type: "circle",
-//     },
-//     opacity: {
-//       value: 0.8,
-//       random: true,
-//       animation: {
-//         enable: true,
-//         speed: 1,
-//       }, // Removed "minimumValue" as it's not valid
-//     },
-//     size: {
-//       value: 4,
-//       random: true,
-//       animation: {
-//         enable: true,
-//         speed: 10,
-//       }, // Removed "minimumValue" as it's not valid
-//     },
-//     move: {
-//       enable: true,
-//       speed: 2,
-//       direction: "none", // Fixed type issue
-//       random: false,
-//       straight: false,
-//       outModes: {
-//         default: "out",
-//       },
-//     },
-//   },
-//   interactivity: {
-//     events: {
-//       onHover: {
-//         enable: true,
-//         mode: "repulse",
-//       },
-//       onClick: {
-//         enable: true,
-//         mode: "push",
-//       },
-//       resize: { enable: true }, // Fixed "resize: true" issue by making it an object
-//     },
-//     modes: {
-//       repulse: {
-//         distance: 100,
-//         duration: 0.4,
-//       },
-//       push: {
-//         quantity: 4,
-//       },
-//     },
-//   },
-//   detectRetina: true,
-// };
+const ParticleLoader: React.FC<{ onComplete: () => void }> = ({
+  onComplete,
+}) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isAnimating, setIsAnimating] = useState(true);
 
-// export const ParticleMotion: React.FC = () => {
-//   return (
-//     <Particles
-//       id="tsparticles"
-//       options={particleOptions} // Corrected options type
-//       init={particlesInit} // Fixed parameter type mismatch
-//       className="absolute inset-0"
-//     />
-//   );
-// };
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const numParticles = 150; // Increased particle count
+    const particles: {
+      x: number;
+      y: number;
+      size: number;
+      speedX: number;
+      speedY: number;
+      targetX: number;
+      targetY: number;
+    }[] = [];
+
+    // Define a center cluster formation
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const clusterRadius = Math.min(canvas.width, canvas.height) / 6;
+
+    for (let i = 0; i < numParticles; i++) {
+      const angle = (i / numParticles) * Math.PI * 2;
+      particles.push({
+        x: Math.random() * canvas.width, // More randomness in initial position
+        y: Math.random() * canvas.height,
+        size: Math.random() * 4 + 2, // Slightly smaller particle size
+        speedX: (Math.random() - 0.5) * 1.5, // Further reduced speed
+        speedY: (Math.random() - 0.5) * 1.5,
+        targetX: centerX + Math.cos(angle) * clusterRadius,
+        targetY: centerY + Math.sin(angle) * clusterRadius,
+      });
+    }
+
+    let elapsedTime = 0;
+    const duration = 7000; // Slower animation (7 seconds)
+    let animationFrameId: number;
+
+    const animateParticles = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "white";
+
+      particles.forEach((p) => {
+        // Even slower movement towards target
+        p.x += (p.targetX - p.x) * 0.01; // Slower attraction
+        p.y += (p.targetY - p.y) * 0.01;
+
+        // Gradual slowdown effect
+        p.speedX *= 0.92;
+        p.speedY *= 0.92;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      elapsedTime += 16; // Approximate frame duration
+      if (elapsedTime < duration) {
+        animationFrameId = requestAnimationFrame(animateParticles);
+      } else {
+        setIsAnimating(false);
+        onComplete();
+      }
+    };
+
+    animateParticles();
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [onComplete]);
+
+  if (!isAnimating) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+      <canvas ref={canvasRef} className="absolute inset-0" />
+    </div>
+  );
+};
+
+export default ParticleLoader;

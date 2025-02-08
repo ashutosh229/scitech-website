@@ -5,7 +5,7 @@
 - [x] niche achievements ka background badalna hain
 - [x] sara kuch data mein convert karna hain
 - [x] images ka carousel banana hain in the home page
-- [] particle effect implement karna hain
+- [x] particle effect implement karna hain
 
 ## About Us
 - [x] Mission Statement 

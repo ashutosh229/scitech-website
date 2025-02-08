@@ -1,9 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-// import { ParticleMotion } from "@/components/defined-ui/partcileEffect";
+import LoadingWrapper from "@/components/defined-ui/loadingWrapper";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -20,33 +18,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const [showReloadEffect, setShowReloadEffect] = useState(true);
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShowReloadEffect(false);
-  //   }, 3000); // Show effect for 3 seconds
-  //   return () => clearTimeout(timer);
-  // }, []);
   return (
     <html lang="en">
       <body>
-        {/* {showReloadEffect && (
-          <AnimatePresence>
-            <motion.div
-              className="fixed inset-0 flex items-center justify-center bg-black z-50"
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-            >
-              {/* <ParticleMotion></ParticleMotion> */}
-        {/* <h1 className="absolute text-white text-4xl font-bold">
-                Loading...
-              </h1>
-            </motion.div>
-          </AnimatePresence> */}
-
-        <div className={spaceGrotesk.className}>{children}</div>
+        <div className={spaceGrotesk.className}>
+          <LoadingWrapper>{children}</LoadingWrapper>
+        </div>
       </body>
     </html>
   );
