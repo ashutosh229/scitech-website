@@ -13,6 +13,12 @@ const getGalleryImages = (clubId: string): string[] => {
   return fs.readdirSync(dirPath).map((file) => `/${clubId}/gallery/${file}`);
 };
 
+export async function generateStaticParams() {
+  return clubLogos.map((club) => ({
+    id: club.id,
+  }));
+}
+
 export default async function ClubPage({ params }: { params: { id: string } }) {
   // Find the club in the array
   const club = clubLogos.find((club) => club.id === params.id);
