@@ -220,16 +220,3 @@ export const clubLogos: Image[] = [
   },
 ];
 
-// export const blogs: { [key: string]: any } = {};
-// clubsName.forEach((club) => {
-//   const dynamicKey = club.toLowerCase().replace(" ", "-");
-//   const blogsVariable = eval(`${dynamicKey}Blogs`);
-//   blogs[club.toLowerCase().replace(" ", "-")] = blogsVariable;
-// });
-
-// export const clubMembers: { [key: string]: any } = {};
-// clubsName.forEach((club) => {
-//   const dynamicKey = club.toLowerCase().replace(" ", "-");
-//   const membersVariable = eval(`${dynamicKey}Members`);
-//   clubMembers[club.toLowerCase().replace(" ", "-")] = membersVariable;
-// });
