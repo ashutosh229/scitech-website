@@ -30,14 +30,13 @@
 - [x] join ka page banana hain
 - [x] Achievements section
 
-## Events Page 
-- [] events page
-
-
 ## Clubs
 - [x] clubs page
 - [x] clubs page ka type annotation ka issue solve karna hain
 - [x] clubs page ka dekhkna hain
+
+## Events Page 
+- [] events page
 
 
 ## Contact Page 
