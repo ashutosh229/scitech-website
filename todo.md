@@ -38,11 +38,9 @@
 ## Events Page 
 - [] events page
 
-
 ## Contact Page 
 - [x] contact form implemenation
 - [] email id implementation 
-
 
 ## Data
 - [] data cleaning karni hain
