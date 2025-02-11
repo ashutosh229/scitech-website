@@ -6,6 +6,8 @@ import Footer from "@/components/defined-ui/footer";
 import { FaLocationDot } from "react-icons/fa6";
 import { Mail, Phone } from "lucide-react";
 import { genSecDetails } from "@/data/members";
+import { motion } from "framer-motion";
+import { toast } from "react-hot-toast";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -14,19 +16,45 @@ const ContactUs = () => {
     subject: "",
     message: "",
   });
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  const validateForm = () => {
+    let valid = true;
+    let newErrors = { name: "", email: "", message: "" };
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+      valid = false;
+    }
+    if (
+      !formData.email.trim() ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+    ) {
+      newErrors.email = "Valid email is required";
+      valid = false;
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = "Message cannot be empty";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: any) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
     const { name, email, subject, message } = formData;
     const mailtoLink = `mailto:${
       genSecDetails.email
@@ -34,20 +62,25 @@ const ContactUs = () => {
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     )}`;
     window.location.href = mailtoLink;
+
+    toast.success("Message sent successfully!");
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   return (
     <div className="bg-[#030617] min-h-screen flex flex-col">
       <Header />
-
-      <div className="flex-grow container mx-auto px-4 py-16 md:py-24">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="flex-grow container mx-auto px-4 py-16 md:py-24"
+      >
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Contact Information */}
           <div className="text-white space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
               Contact <span className="text-[#0A66C2]">Us</span>
             </h2>
-
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <FaLocationDot className="text-[#0A66C2] text-2xl" />
@@ -56,7 +89,6 @@ const ContactUs = () => {
                   <p>Bhilai, Durg, Chhattisgarh</p>
                 </div>
               </div>
-
               <div className="flex items-center space-x-4">
                 <Mail className="text-[#0A66C2] text-2xl" />
                 <a
@@ -68,30 +100,16 @@ const ContactUs = () => {
                   {genSecDetails.email}
                 </a>
               </div>
-
               <div className="flex items-center space-x-4">
                 <Phone className="text-[#0A66C2] text-2xl" />
                 <p>+91 {genSecDetails.phone}</p>
               </div>
             </div>
-
-            <a
-              href="https://maps.app.goo.gl/gg93jd9WPyVYDwk96"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-[#0A66C2] hover:underline"
-            >
-              <FaLocationDot />
-              <span>View on Google Maps</span>
-            </a>
           </div>
-
-          {/* Contact Form */}
           <div className="bg-white/5 p-8 rounded-xl border border-white/10">
             <h3 className="text-2xl text-white mb-6 text-center">
               Send us a Message
             </h3>
-
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="text"
@@ -102,7 +120,9 @@ const ContactUs = () => {
                 required
                 className="w-full bg-transparent border-b border-white/30 text-white p-2 focus:outline-none focus:border-[#0A66C2]"
               />
-
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name}</p>
+              )}
               <input
                 type="email"
                 name="email"
@@ -112,7 +132,9 @@ const ContactUs = () => {
                 required
                 className="w-full bg-transparent border-b border-white/30 text-white p-2 focus:outline-none focus:border-[#0A66C2]"
               />
-
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email}</p>
+              )}
               <input
                 type="text"
                 name="subject"
@@ -121,7 +143,6 @@ const ContactUs = () => {
                 onChange={handleChange}
                 className="w-full bg-transparent border-b border-white/30 text-white p-2 focus:outline-none focus:border-[#0A66C2]"
               />
-
               <textarea
                 name="message"
                 placeholder="Your Message"
@@ -131,7 +152,9 @@ const ContactUs = () => {
                 rows={4}
                 className="w-full bg-transparent border-b border-white/30 text-white p-2 focus:outline-none focus:border-[#0A66C2]"
               ></textarea>
-
+              {errors.message && (
+                <p className="text-red-500 text-sm">{errors.message}</p>
+              )}
               <button
                 type="submit"
                 className="w-full bg-[#0A66C2] text-white py-3 rounded-md hover:bg-[#0A66C2]/90 transition-colors"
@@ -141,30 +164,7 @@ const ContactUs = () => {
             </form>
           </div>
         </div>
-
-        {/* Sponsorship Section */}
-        <div className="mt-16 bg-[#0A66C2]/10 p-8 rounded-xl border border-white/10">
-          <h3 className="text-3xl text-white mb-6 text-center font-bold">
-            Interested in Sponsorship?
-          </h3>
-          <p className="text-gray-300 text-center mb-6">
-            If you are interested in sponsoring our events and initiatives, we
-            would love to hear from you. Connect with our General Secretary
-            today!
-          </p>
-          <div className="flex justify-center">
-            <a
-              href="mailto:Gensec_Scitech_Gymkhana@iitbhilai.ac.in?subject=Sponsorship%20Inquiry"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#0A66C2] text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-[#0A66C2]/90 transition-colors"
-            >
-              Contact
-            </a>
-          </div>
-        </div>
-      </div>
-
+      </motion.div>
       <Footer />
     </div>
   );
