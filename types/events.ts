@@ -47,6 +47,8 @@ export interface Image {
   twitter: string;
   github: string;
   agenda: string;
+  gallery: string[];
+  events: EventType[]
 }
 
 export interface aboutUsInfo {

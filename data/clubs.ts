@@ -60,6 +60,9 @@ export const clubLogos: Image[] = [
     github: "",
     agenda: "",
     youtube: "",
+    gallery: [""],
+    events: []
+
   },
   {
     id: "ses",
@@ -78,6 +81,8 @@ export const clubLogos: Image[] = [
     twitter: "",
     github: "",
     agenda: "",
+    gallery: [""],
+    events: []
   },
   {
     id: "bib",
@@ -95,6 +100,8 @@ export const clubLogos: Image[] = [
     twitter: "https://twitter.com/BlockchainClubI1",
     github: "",
     agenda: "",
+    gallery: [""],
+    events: []
   },
   {
     id: "openlake",
@@ -113,6 +120,8 @@ export const clubLogos: Image[] = [
     github: "",
     agenda: "",
     youtube: "",
+    gallery: [""],
+    events: []
   },
   {
     id: "motorsports",
@@ -130,6 +139,8 @@ export const clubLogos: Image[] = [
     github: "",
     agenda: "",
     youtube: "",
+    gallery: [""],
+    events: []
   },
   {
     id: "epsilon",
@@ -148,6 +159,8 @@ export const clubLogos: Image[] = [
     twitter: "",
     github: "",
     agenda: "",
+    gallery: [""],
+    events: []
   },
   {
     id: "ingenuity",
@@ -165,6 +178,8 @@ export const clubLogos: Image[] = [
     twitter: "",
     github: "",
     agenda: "",
+    gallery: [""],
+    events: []
   },
   {
     id: "dsai",
@@ -183,6 +198,8 @@ export const clubLogos: Image[] = [
     twitter: "https://twitter.com/DSAI_IITBHILAI",
     github: "https://github.com/dsai-iitbhilai",
     agenda: "",
+    gallery: [""],
+    events: []
   },
   {
     id: "electromos",
@@ -201,6 +218,8 @@ export const clubLogos: Image[] = [
     github: "",
     agenda: "",
     youtube: "",
+    gallery: [""],
+    events: []
   },
   {
     id: "spectre",
@@ -217,6 +236,8 @@ export const clubLogos: Image[] = [
     twitter: "",
     github: "",
     agenda: "",
+    gallery: [""],
+    events: []
   },
 ];
 
