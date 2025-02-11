@@ -35,9 +35,9 @@
 
 
 ## Clubs
-- [] clubs page
-- [] clubs page ka type annotation ka issue solve karna hain
-- [] clubs page ka dekhkna hain
+- [x] clubs page
+- [x] clubs page ka type annotation ka issue solve karna hain
+- [x] clubs page ka dekhkna hain
 
 
 ## Contact Page 
