@@ -62,7 +62,6 @@ export const clubLogos: Image[] = [
     youtube: "",
     gallery: [""],
     events: []
-
   },
   {
     id: "ses",
