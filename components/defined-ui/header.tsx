@@ -28,48 +28,57 @@ const Header = ({ className = "" }) => {
         scrolled ? "bg-black/80 backdrop-blur-lg shadow-lg" : "bg-transparent"
       } ${className}`}
     >
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        {" "}
+        {/* Increased padding for better spacing */}
         {/* Logo and Heading Section */}
-        <Link href={routes.home} className="flex items-center space-x-4">
+        <Link href={routes.home} className="flex items-center space-x-5">
+          {" "}
+          {/* Increased spacing */}
           <motion.div
-            className="flex items-center space-x-3"
+            className="flex items-center space-x-4" // Increased spacing
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             {/* Enlarged Logo */}
-            <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg">
+            <div className="w-20 h-20 rounded-full overflow-hidden shadow-lg">
+              {" "}
+              {/* Increased size of the logo */}
               <Image
-                src={imagesPath.home.scitechLogo} // Replace with the correct path to your logo
+                src={imagesPath.home.scitechLogo}
                 alt="SciTech Council Logo"
-                width={64}
-                height={64}
+                width={80} // Updated width
+                height={80} // Updated height
               />
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl font-bold gradient-text tracking-tight">
+            <h1 className="text-5xl font-bold gradient-text tracking-tight">
+              {" "}
+              {/* Increased font size */}
               SciTech Council
             </h1>
           </motion.div>
         </Link>
-
         {/* Navigation Menu */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-8">
+          {" "}
+          {/* Increased spacing */}
           {quickLinks.map((item) => (
             <motion.div
               key={item}
               whileHover={{
                 scale: 1.1,
                 rotate: 2,
-                color: "rgb(59,130,246)", // Tailwind Blue-500
+                color: "rgb(59,130,246)",
               }}
               whileTap={{ scale: 0.95 }}
             >
               {item === "Clubs" ? (
                 <Link
                   href="/#clubs"
-                  scroll={false} // Prevent default scrolling to allow smooth scrolling
-                  className="text-white text-sm font-medium relative group"
+                  scroll={false}
+                  className="text-white text-lg font-medium relative group" // Increased font size
                 >
                   Clubs
                   <span
@@ -80,10 +89,9 @@ const Header = ({ className = "" }) => {
               ) : (
                 <Link
                   href={`/${item.toLowerCase().replace(" ", "-")}`}
-                  className="text-white text-sm font-medium relative group"
+                  className="text-white text-lg font-medium relative group" // Increased font size
                 >
                   {item}
-                  {/* Underline Animation */}
                   <span
                     className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 
                 transition-all duration-500 group-hover:w-full"
