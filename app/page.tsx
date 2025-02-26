@@ -33,8 +33,13 @@ export default function Home() {
       <Header></Header>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center text-white">
+      <section
+        className="relative h-screen flex items-center justify-center text-white bg-cover bg-center"
+        style={{ backgroundImage: `url("/iit-bh.jpeg")` }} // ✅ Background Image Applied
+      >
+        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80"></div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,6 +49,7 @@ export default function Home() {
           <h1 className="text-6xl md:text-7xl font-bold hero-gradient-text leading-tight">
             Council of Science and Technology
           </h1>
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -52,6 +58,7 @@ export default function Home() {
           >
             Innovating Today for a Better Tomorrow
           </motion.p>
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

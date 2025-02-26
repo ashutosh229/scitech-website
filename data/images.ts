@@ -8,7 +8,7 @@ const imagesPath = {
   },
   home: {
     scitechLogo: "scitech-new-logo.jpeg",
-    heroBg: "",
+    heroBg: "iit-bh.jpeg",
     logoCircleGif: "scitechgif.gif",
     achievements: "Eyantra.png",
     history: "history.jpeg",
