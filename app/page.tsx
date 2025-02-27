@@ -146,9 +146,10 @@ export default function Home() {
           <CircularImages />
         </div>
       </section>
-
       {/* Achievements Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-100">
+        {" "}
+        {/* ✅ Changed background to whitish (gray-100) */}
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Image Container */}
@@ -156,14 +157,15 @@ export default function Home() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-2xl flex items-center justify-center bg-gray-900"
+              className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-2xl flex items-center justify-center bg-white"
+              // ✅ Changed bg-gray-900 to bg-white to match the section
             >
               <Image
                 src={imagesPath.home.achievements}
                 alt="Achievements"
                 width={500} // ✅ Explicit width
                 height={600} // ✅ Explicit height
-                className="object-contain" // ✅ Ensures the full image fits without cutting
+                className="object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20" />
             </motion.div>
@@ -178,7 +180,9 @@ export default function Home() {
               <h2 className="text-4xl font-bold gradient-text">
                 Our Achievements
               </h2>
-              <p className="text-gray-600 text-lg">
+              <p className="text-gray-700 text-lg">
+                {" "}
+                {/* ✅ Darkened text for better readability */}
                 From groundbreaking research to innovative projects, our
                 students have consistently pushed the boundaries of science and
                 technology. Discover our remarkable journey of achievements and
