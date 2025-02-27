@@ -151,20 +151,24 @@ export default function Home() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Image Container */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative h-[400px] rounded-lg overflow-hidden shadow-2xl"
+              className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-2xl flex items-center justify-center bg-gray-900"
             >
               <Image
                 src={imagesPath.home.achievements}
                 alt="Achievements"
-                fill
-                className="object-cover"
+                width={500} // ✅ Explicit width
+                height={600} // ✅ Explicit height
+                className="object-contain" // ✅ Ensures the full image fits without cutting
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20" />
             </motion.div>
+
+            {/* Text Content */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
